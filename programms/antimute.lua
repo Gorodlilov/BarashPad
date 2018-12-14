@@ -12,7 +12,7 @@ local cb=component.chat_box
 local plrs={}
 cb.setDistance(100)
 local term=require("term")
-local gpu=component.gpu
+local g=component.gpu
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
@@ -48,7 +48,7 @@ end
 
 term.clear()
 for i,k in pairs(plrs) do
-   gpu.set(1,i,k)
+   g.set(1,i,k)
    if k==plr then cb.setName(plr);cb.say(msg) end
 end
 end
