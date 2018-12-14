@@ -11,10 +11,10 @@ local shell = require("shell")
 local fs = require("filesystem")
 local unicode=require("unicode")
 local serial = require("serialization")
-if not fs.exists("/lib/Barlib.lua") then
-	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Barlib.lua")
+if not fs.exists("/lib/Bar.lua") then
+	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
 end
-local Bar = require("Barlib")
+local Bar = require("Bar")
 local g = component.gpu
 event.shouldInterrupt = function () return false end
 --------------------Настройки--------------------
