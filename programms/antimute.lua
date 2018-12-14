@@ -15,6 +15,12 @@ local term=require("term")
 local gpu=component.gpu
 term.clear()
 
+local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
+local Bar = require("Bar")
+
+WIGHT, HEIGHT = Bar.Resolution(WIGHT, HEIGHT)
+Bar.Ram("Антимут", COLOR1,COLOR2,WIGHT, HEIGHT)
+
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
