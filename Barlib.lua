@@ -1,10 +1,10 @@
 --|=========================|
---|  SkyLibrary | СкайБибла |
+--|  BarLibrary | СкайБибла |
 --|  Проект MCSkill.ru TMSB |
 --|   Developer: Barawik_   |
---|  Author: SkyDrive_ love |
+--|  Author: BarDrive_ love |
 --|=========================|
-local Sky = {}
+local Bar = {}
 local component = require("component")
 local computer=require("computer")
 local serial = require("serialization")
@@ -16,7 +16,7 @@ local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
 
-function Sky.Resolution(w,h) --Резоль
+function Bar.Resolution(w,h) --Резоль
 	if w < 48 then
 		w = 48 end
 	if h < 3 then
@@ -25,28 +25,28 @@ function Sky.Resolution(w,h) --Резоль
 	return w,h
 end
 
-function Sky.Mid(w,y,text) --Центровка по центру (Если рамка одинарная)
+function Bar.Mid(w,y,text) --Центровка по центру (Если рамка одинарная)
     local _,n = string.gsub(text, "&","")
 	local l = unicode.len(text) - n * 2
     x = (w / 2) - (l / 2)
-	Sky.Text(x, y, text)
+	Bar.Text(x, y, text)
 end
 
-function Sky.MidL(w,y,text) --Центровка слева
+function Bar.MidL(w,y,text) --Центровка слева
     local _,n = string.gsub(text, "&","")
 	local l = unicode.len(text) - n * 2
     x = 13 - (l / 2)
-	Sky.Text(x+2, y, text)
+	Bar.Text(x+2, y, text)
 end
 
-function Sky.MidR(w,y,text) --Центровка справа
+function Bar.MidR(w,y,text) --Центровка справа
     local _,n = string.gsub(text, "&","")
 	local l = unicode.len(text) - n * 2
     x = ((w - 34) / 2) - (l / 2)
-	Sky.Text(x+31, y, text)
+	Bar.Text(x+31, y, text)
 end
 
-function Sky.DrawImage(x,y,path) --Отрисовка картинок
+function Bar.DrawImage(x,y,path) --Отрисовка картинок
 	local back, font = g.getBackground(), g.getForeground()
 	if (fs.exists(path)) then
 		local start_x = x
@@ -78,15 +78,15 @@ function Sky.DrawImage(x,y,path) --Отрисовка картинок
 	g.setForeground(font)
 end
 
-function Sky.Com(command) --Выполнить команду
+function Bar.Com(command) --Выполнить команду
 	if (component.isAvailable("opencb")) then
 		local _,c = component.opencb.execute(command)
 		return c
 	end
 end
 
-function Sky.Money(nick) --Баланс игрока 
-	local c = Sky.Com("money " .. nick)
+function Bar.Money(nick) --Баланс игрока 
+	local c = Bar.Com("money " .. nick)
 	local _, b = string.find(c, "Баланс: §f")
 	local balance
 	if string.find(c, "Emeralds") ~= nil then
@@ -97,8 +97,8 @@ function Sky.Money(nick) --Баланс игрока
 	return (balance)
 end
 
-function Sky.Check_money(nick,price) --Чекнуть, баланс, если хватает, то снять бабки
-	local balance = Sky.Money(nick)
+function Bar.Check_money(nick,price) --Чекнуть, баланс, если хватает, то снять бабки
+	local balance = Bar.Money(nick)
 	balance = string.sub(balance, 1, string.len(balance) - 3)
 	if string.find(balance, "-") ~= nil then
 		return false
@@ -107,13 +107,13 @@ function Sky.Check_money(nick,price) --Чекнуть, баланс, если х
 		if tonumber(balance) < price then
 			return false
 		else
-			Sky.Com("money take " .. nick .. " " .. price)
+			Bar.Com("money take " .. nick .. " " .. price)
 			return true
 		end
 	end
 end
 
-function Sky.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питух
+function Bar.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питух
 	term.clear()
 	g.setBackground(0x000000)
 	g.setForeground(col2)
@@ -129,21 +129,21 @@ function Sky.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питу�
 		g.set(w-1, i, "||")
 	end
 	if double == nil then
-		Sky.MidR(w,1,"[ " .. name .. " ]")
+		Bar.MidR(w,1,"[ " .. name .. " ]")
 	else
-		Sky.Text(w/2 - unicode.len("[ " .. name .. " ]")/2,1,"[ " .. name .. " ]")
+		Bar.Text(w/2 - unicode.len("[ " .. name .. " ]")/2,1,"[ " .. name .. " ]")
 	end
 	g.set(w-42,h,"[ Developer: Barawik_  ]")
 	g.setForeground(col1)
 	if double == nil then
-		Sky.MidR(w,1,name)
+		Bar.MidR(w,1,name)
 	else
-		Sky.Text(w/2 - unicode.len(name)/2,1,name)
+		Bar.Text(w/2 - unicode.len(name)/2,1,name)
 	end
 	g.set(w-40,h,"Developer Barawik_ ")
 end
 
-function Sky.SetColor(index) --Список цветов
+function Bar.SetColor(index) --Список цветов
 	if (index ~= "r") then back = g.getForeground() end
 	if (index == "0") then g.setForeground(0x333333) end
 	if (index == "1") then g.setForeground(0x0000ff) end
@@ -165,11 +165,11 @@ function Sky.SetColor(index) --Список цветов
 	if (index == "r") then g.setForeground(back) end
 end
 
-function Sky.Text(x,y,text) --Цветной текст
+function Bar.Text(x,y,text) --Цветной текст
 	local n = 1
 	for i = 1, unicode.len(text) do
 		if unicode.sub(text, i,i) == "&" then
-			Sky.SetColor(unicode.sub(text, i + 1, i + 1))
+			Bar.SetColor(unicode.sub(text, i + 1, i + 1))
 		elseif unicode.sub(text, i - 1, i - 1) ~= "&" then
 			g.set(x+n,y, unicode.sub(text, i,i))
 			n = n + 1
@@ -177,7 +177,7 @@ function Sky.Text(x,y,text) --Цветной текст
 	end
 end
 
-function Sky.Button(x,y,w,h,col1,col2,text) -- Кнопка
+function Bar.Button(x,y,w,h,col1,col2,text) -- Кнопка
 	g.setForeground(col1)
 	g.set(x + w/2 - unicode.len(text)/2, y+h/2, text)
 	g.setForeground(col2)
@@ -195,41 +195,41 @@ function Sky.Button(x,y,w,h,col1,col2,text) -- Кнопка
 	g.set(x+w-1,y+h-1,"┘")
 end
 
-function Sky.TakeItem(nick, item, numb) --Забрать итем
-	if string.find(Sky.Com("clear " .. nick .. " " .. item .. " " .. numb), "Убрано") ~= nil then
+function Bar.TakeItem(nick, item, numb) --Забрать итем
+	if string.find(Bar.Com("clear " .. nick .. " " .. item .. " " .. numb), "Убрано") ~= nil then
 		return true
 	else
 		return false
 	end
 end
 
-function Sky.ClearL(h) --Очистка левой части
+function Bar.ClearL(h) --Очистка левой части
 	g.fill(3,2,26,h-2," ")
 end
 
-function Sky.ClearR(w,h) --Очистка правой части
+function Bar.ClearR(w,h) --Очистка правой части
 	g.fill(31,2,w-32,h-2," ")
 end
 
-function Sky.Math_round(roundIn , roundDig) --Округлить число
+function Bar.Math_round(roundIn , roundDig) --Округлить число
     local mul = math.pow(10, roundDig)
     return ( math.floor(( roundIn * mul) + 0.5)/mul)
 end
 
-function Sky.Swap(array, index1, index2) --Свап
+function Bar.Swap(array, index1, index2) --Свап
 	array[index1], array[index2] = array[index2], array[index1]
 end
 
-function Sky.Shake(array) --Шафл
+function Bar.Shake(array) --Шафл
 	local counter = #array
 	while counter > 1 do
 		local index = math.random(counter)
-		Sky.Swap(array, index, counter)
+		Bar.Swap(array, index, counter)
 		counter = counter - 1
 	end
 end
 
-function Sky.Get(url, filename,x,y) --Получить поток
+function Bar.Get(url, filename,x,y) --Получить поток
 	local f, reason = io.open(filename, "w")
 	if not f then
 		g.set(x,y,"         Ошибка чтения файла         ")
@@ -255,9 +255,9 @@ function Sky.Get(url, filename,x,y) --Получить поток
 	end
 end
 
-function Sky.Run(url, ...) --Запуск и удаление файла
+function Bar.Run(url, ...) --Запуск и удаление файла
 	local tmpFile = os.tmpname()
-	Sky.Read(url, tmpFile)
+	Bar.Read(url, tmpFile)
 	term.clear() -- <=== Очистка экрана перед запуском проги, если чё, она тута
 	local success, reason = shell.execute(tmpFile, nil, ...)
 	if not success then
@@ -267,12 +267,12 @@ function Sky.Run(url, ...) --Запуск и удаление файла
 	fs.remove(tmpFile)
 end
 
-function Sky.CheckOP(nick) --Чек на опку
+function Bar.CheckOP(nick) --Чек на опку
 	return true
 end
 
-function Sky.Playtime(nick) --Плейтайм
-	local c = Sky.Com("playtime " .. nick)
+function Bar.Playtime(nick) --Плейтайм
+	local c = Bar.Com("playtime " .. nick)
 	local _, b = string.find(c, "на сервере ")
 	if string.find(c, "час") then
 		local text = string.sub(c, b+1, string.find(c, " час"))
@@ -284,8 +284,8 @@ function Sky.Playtime(nick) --Плейтайм
 	
 end
 
-function Sky.CheckMute(nick) --Чекнуть висит ли мут
-	local c = Sky.Com("checkban " .. nick)
+function Bar.CheckMute(nick) --Чекнуть висит ли мут
+	local c = Bar.Com("checkban " .. nick)
 	if string.find(c, "Muted: §aFalse") ~= nil then
 		return false
 	else
@@ -293,7 +293,7 @@ function Sky.CheckMute(nick) --Чекнуть висит ли мут
 	end
 end
 
-function Sky.GetHostTime(timezone) --Получить текущее реальное время компьютера, хостящего сервер майна
+function Bar.GetHostTime(timezone) --Получить текущее реальное время компьютера, хостящего сервер майна
 	timezone = timezone or 2
 	local file = io.open("/HostTime.tmp", "w")
 	file:write("123")
@@ -305,19 +305,19 @@ function Sky.GetHostTime(timezone) --Получить текущее реаль�
 	return tonumber(day), tonumber(month), tonumber(year), tonumber(hour), tonumber(minute), tonumber(second)
 end
 
-function Sky.Time(timezone) --Получет настоящее время, стоящее на Хост-машине
-	local time = {Sky.GetHostTime(timezone)}
+function Bar.Time(timezone) --Получет настоящее время, стоящее на Хост-машине
+	local time = {Bar.GetHostTime(timezone)}
 	local text = string.format("%02d:%02d:%02d", time[4], time[5], time[6])
 	return text
 end
 
-function Sky.Hex(Hcolor) --Конвертация Dec в Hex
+function Bar.Hex(Hcolor) --Конвертация Dec в Hex
 	local hex = "000000" .. string.format('%x', Hcolor)
 	hex = string.sub(hex, unicode.len(hex)-5, unicode.len(hex))
 	return hex
 end
 
-function Sky.Dec(Dcolor) --Конвертация Hex в Dec
+function Bar.Dec(Dcolor) --Конвертация Hex в Dec
 	if Dcolor == "" then
 		Dcolor = "ffffff"
 	end
@@ -325,14 +325,14 @@ function Sky.Dec(Dcolor) --Конвертация Hex в Dec
 	return tonumber(dec)
 end
 
-function Sky.TF(value) --Если false, то вернёт true и наоборот
+function Bar.TF(value) --Если false, то вернёт true и наоборот
 	if value then
 		return false
 	end
 	return true
 end
 
-function Sky.Palitra(col) --Палитра
+function Bar.Palitra(col) --Палитра
 	local OldColor = g.getForeground()
 	if col ~= nil then
 		OldColor = col
@@ -371,7 +371,7 @@ function Sky.Palitra(col) --Палитра
 	g.setForeground(OldColor)
 	g.set(x+19,y+1,"██████")
 	g.set(x+19,y+2,"██████")
-	g.set(x+19, y+5, Sky.Hex(OldColor))
+	g.set(x+19, y+5, Bar.Hex(OldColor))
 
 	while true do
 		local e,_,w,h = event.pull("touch")
@@ -383,19 +383,19 @@ function Sky.Palitra(col) --Палитра
 						g.setForeground(NewColor)
 						g.set(x+19,y+1,"██████")
 						g.set(x+19,y+2,"██████")
-						g.set(x+19, y+5, Sky.Hex(NewColor))
+						g.set(x+19, y+5, Bar.Hex(NewColor))
 					end
 				end
 			end
 			if w>=x+19 and w<=x+24 and h==y+5 then
 				g.set(x+19,y+5,"      ")
 				term.setCursor(x+19,y+5)
-				NewColor = Sky.Read({max = 6, accept = "0-9a-f", blink = true})
-				NewColor = Sky.Dec(NewColor)
+				NewColor = Bar.Read({max = 6, accept = "0-9a-f", blink = true})
+				NewColor = Bar.Dec(NewColor)
 				g.setForeground(NewColor)
 				g.set(x+19,y+1,"██████")
 				g.set(x+19,y+2,"██████")
-				g.set(x+19, y+5, Sky.Hex(NewColor))
+				g.set(x+19, y+5, Bar.Hex(NewColor))
 			elseif w>=x+21 and w<=x+22 and h==y+7 then
 				g.setForeground(OldColor)
 				g.fill(x,y,x+26,y+8," ")
@@ -405,7 +405,7 @@ function Sky.Palitra(col) --Палитра
 	end
 end
 
-function Sky.PressButton(Pw,Ph,mass)
+function Bar.PressButton(Pw,Ph,mass)
 	local x,y,w,h = mass[1], mass[2], mass[3], mass[4]
 	if Pw>=x and Pw<=x+w-1 and Ph>=y and Ph<=y+h-1 then
 		return true
@@ -413,7 +413,7 @@ function Sky.PressButton(Pw,Ph,mass)
 	return false
 end
 
-function Sky.DrawButton(mass)
+function Bar.DrawButton(mass)
 	local x,y,w,h,text,col1,col2 = mass[1], mass[2], mass[3], mass[4], mass[5], mass[6], mass[7]
 	g.fill(x,y,w,h," ")
 	g.setForeground(col1)
@@ -433,7 +433,7 @@ function Sky.DrawButton(mass)
 	g.set(x+w-1,y+h-1,"┘")
 end
 
-function Sky.PressSwitch(Pw,Ph, mass)
+function Bar.PressSwitch(Pw,Ph, mass)
 	local x,y = mass[1], mass[2]
 	if Pw>=x and Pw<=x+4 and Ph>=y and Ph<=y+2 then
 		return true
@@ -441,7 +441,7 @@ function Sky.PressSwitch(Pw,Ph, mass)
 	return false
 end
 
-function Sky.DrawSwitch(mass) --Свич
+function Bar.DrawSwitch(mass) --Свич
 	local x,y,col1,col2,value = mass[1], mass[2], mass[3], mass[4], mass[5]
 	g.setForeground(col2)
 	g.set(x,y,  "┌───┐")
@@ -457,14 +457,14 @@ function Sky.DrawSwitch(mass) --Свич
 	end
 end
 
-function Sky.Word(x,y,text,ramka) --Шрифт
+function Bar.Word(x,y,text,ramka) --Шрифт
 	text = unicode.lower(text)
 	for i = 1, unicode.len(text) do
-		Sky.Symbol(i*8-8 + x, y, string.sub(text,i,i), ramka)
+		Bar.Symbol(i*8-8 + x, y, string.sub(text,i,i), ramka)
 	end
 end
 
-function Sky.Symbol(x,y,symbol,ramka) --Символы шрифта
+function Bar.Symbol(x,y,symbol,ramka) --Символы шрифта
 	local WBack = g.getBackground()
 	
 	if ramka ~= nil then
@@ -586,7 +586,7 @@ function Sky.Symbol(x,y,symbol,ramka) --Символы шрифта
 	g.setBackground(WBack)
 end
 
-function Sky.Read(settings)
+function Bar.Read(settings)
 	--mask, max, rim - returnIfMax, accept, blink, center, nick, clip
     if not settings then
         settings = {}
@@ -670,4 +670,4 @@ function Sky.Read(settings)
     end
 end
 
-return Sky
+return Bar

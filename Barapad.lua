@@ -14,7 +14,7 @@ local serial = require("serialization")
 if not fs.exists("/lib/Barlib.lua") then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Barlib.lua")
 end
-local Sky = require("Sky")
+local Bar = require("Bar")
 local g = component.gpu
 event.shouldInterrupt = function () return false end
 --------------------Настройки--------------------
@@ -33,8 +33,8 @@ local mid = (WIGHT-32)/2+32
 local login, prog, tech = false, false, false
 local sel = 0
 
-WIGHT, HEIGHT = Sky.Resolution(WIGHT, HEIGHT)
-Sky.Ram("БарашкаПад", COLOR1,COLOR2,WIGHT, HEIGHT)
+WIGHT, HEIGHT = Bar.Resolution(WIGHT, HEIGHT)
+Bar.Ram("БарашкаПад", COLOR1,COLOR2,WIGHT, HEIGHT)
 
 file = io.open(shell.getWorkingDirectory() .. "/Programms.lua", "r")
 local progs = serial.unserialize("{" .. file:read(9999999) .. "}")
@@ -44,22 +44,22 @@ function Login()
 	login = false
 	prog = false
 	tech = false
-	Sky.ClearL(HEIGHT)
-	Sky.ClearR(WIGHT,HEIGHT)
+	Bar.ClearL(HEIGHT)
+	Bar.ClearR(WIGHT,HEIGHT)
 	Rules()
 	g.setForeground(COLOR1)
-	Sky.Word(mid - 28,7, "BARAPAD", 0x222222)
-	Sky.MidR(WIGHT,32,"Введите пароль:")
+	Bar.Word(mid - 28,7, "BARAPAD", 0x222222)
+	Bar.MidR(WIGHT,32,"Введите пароль:")
 	term.setCursor(mid-2,33)
-	local p, nick = Sky.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
+	local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
 	if p==PASS then
 		if nick then
 			login = true
-			Sky.MidR(WIGHT,33,"Приветствую, " .. nick)
+			Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
 			computer.addUser(nick)
 			os.sleep(2)
-			Sky.ClearL(HEIGHT)
-			Sky.ClearR(WIGHT,HEIGHT)
+			Bar.ClearL(HEIGHT)
+			Bar.ClearR(WIGHT,HEIGHT)
 			Rules(nick)
 			Table()
 		end
@@ -69,44 +69,44 @@ end
 function Rules(nick)
 	if (login) then
 		g.setForeground(COLOR2)
-		Sky.MidL(WIGHT,5,"==========================")
-		Sky.MidL(WIGHT,11,"==========================")
-		Sky.MidL(WIGHT,15,"==========================")
-		Sky.MidL(WIGHT,31,"Добро пожаловать")
+		Bar.MidL(WIGHT,5,"==========================")
+		Bar.MidL(WIGHT,11,"==========================")
+		Bar.MidL(WIGHT,15,"==========================")
+		Bar.MidL(WIGHT,31,"Добро пожаловать")
 		g.setForeground(COLOR1)
-		Sky.MidL(WIGHT,3, "Общая инфа:")
-		Sky.MidL(WIGHT,6, "Монитор в идеале 5х3")
-		Sky.MidL(WIGHT,7, "блока, чтоб не париться.")
-		Sky.MidL(WIGHT,8, "Но если над другой, то")
-		Sky.MidL(WIGHT,9, "в настройках каждой проги")
-		Sky.MidL(WIGHT,10, "меняйте параметр WIGHT")
-		Sky.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
-		Sky.MidL(WIGHT,32,nick)
-		Sky.Button(7,34,18,3,COLOR1,COLOR2,"Обновить")
-		Sky.Button(7,37,18,3,COLOR1,COLOR2,"Выйти")
+		Bar.MidL(WIGHT,3, "Общая инфа:")
+		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
+		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
+		Bar.MidL(WIGHT,8, "Но если над другой, то")
+		Bar.MidL(WIGHT,9, "в настройках каждой проги")
+		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
+		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
+		Bar.MidL(WIGHT,32,nick)
+		Bar.Button(7,34,18,3,COLOR1,COLOR2,"Обновить")
+		Bar.Button(7,37,18,3,COLOR1,COLOR2,"Выйти")
 	end
 end
 
 function TechPanel()
 	prog = false
 	g.fill(mid - 43, 13, 83, 23, " ")
-	Sky.MidR(WIGHT, 20, "&bПриветик, я Барашка, принимаю все")
-	Sky.MidR(WIGHT, 21, "&bпожелания: почта - vkd2005@mail.ru")
+	Bar.MidR(WIGHT, 20, "&bПриветик, я Барашка, принимаю все")
+	Bar.MidR(WIGHT, 21, "&bпожелания: почта - vkd2005@mail.ru")
 	tech = true
 end
 
 function ProgrammPanel()
 	g.fill(mid - 43, 13, 83, 23, " ")
 	tech = false
-	Sky.MidR(WIGHT,13,"&bСписок программ для OpenComputers&r")
+	Bar.MidR(WIGHT,13,"&bСписок программ для OpenComputers&r")
 	g.setForeground(COLOR3)
-	Sky.MidR(WIGHT,14, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓")
-	Sky.MidR(WIGHT,15, "┃                       &bНазвание&r                      ┃     &bСтатус&r     ┃  &bРазмер&r  ┃")
-	Sky.MidR(WIGHT,16, "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━┫")
+	Bar.MidR(WIGHT,14, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓")
+	Bar.MidR(WIGHT,15, "┃                       &bНазвание&r                      ┃     &bСтатус&r     ┃  &bРазмер&r  ┃")
+	Bar.MidR(WIGHT,16, "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━┫")
 	for i = 1, 9 do 
-		Sky.MidR(WIGHT,i+16, "┃                                                     ┃                ┃          ┃")
+		Bar.MidR(WIGHT,i+16, "┃                                                     ┃                ┃          ┃")
 	end
-	Sky.MidR(WIGHT,26, "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━┛")
+	Bar.MidR(WIGHT,26, "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━┛")
 	DrawProgs(0)
 	prog = true
 end
@@ -124,28 +124,28 @@ function DrawProgs(s)
 			g.set(mid-19-unicode.len(name_progs)/2, i+16, ">>> " .. name_progs .. " <<<")		
 		end
 		if (fs.exists(shell.getWorkingDirectory() .. "/" .. progs[i][1][1] .. ".lua")) then
-			Sky.Text(mid + 12, i+16, "&2 Установлено  &r")
+			Bar.Text(mid + 12, i+16, "&2 Установлено  &r")
 			local size = fs.size(shell.getWorkingDirectory() .. "/" .. progs[i][1][1] .. ".lua")
-			Sky.Text(mid + 33 - unicode.len(size)/2, i+16, size .. "B")
+			Bar.Text(mid + 33 - unicode.len(size)/2, i+16, size .. "B")
 		else
-			Sky.Text(mid + 12, i+16, "&8Не установлено&r")
+			Bar.Text(mid + 12, i+16, "&8Не установлено&r")
 		end
 	end
 	g.fill(mid - 42, 27, 84, 10, " ")
 	if sel ~= 0 then
 		if (fs.exists(shell.getWorkingDirectory() .. "/" .. progs[sel][1][1] .. ".lua")) then
-			Sky.Button(mid-21,33,20,3,COLOR1,COLOR2,"Запустить")
-			Sky.Button(mid+1,33,20,3,COLOR1,COLOR2," Обновить ")
+			Bar.Button(mid-21,33,20,3,COLOR1,COLOR2,"Запустить")
+			Bar.Button(mid+1,33,20,3,COLOR1,COLOR2," Обновить ")
 		else
-			Sky.Button(mid-10,33,20,3,COLOR1,COLOR2,"Установить")
+			Bar.Button(mid-10,33,20,3,COLOR1,COLOR2,"Установить")
 		end
 		g.setForeground(COLOR1)
-		Sky.MidR(WIGHT,28,"Требуемые компоненты:")
+		Bar.MidR(WIGHT,28,"Требуемые компоненты:")
 		local comp = ""
 		for i = 1, #progs[sel][3] do
 			comp = comp .. progs[sel][3][i] .. " &0|&r "
 		end
-		Sky.MidR(WIGHT,29, "&0|&r " .. comp)
+		Bar.MidR(WIGHT,29, "&0|&r " .. comp)
 	end
 end
 
@@ -156,7 +156,7 @@ function Click(w,h)
 			if w>=mid-21 and w<=mid-2 and h>=33 and h<=35 then
 				for i = 1, #progs[sel][3] do
 					if not (component.isAvailable(progs[sel][3][i])) then
-						Sky.MidR(WIGHT,31,"&6Отсутствует компонент: &4" .. progs[sel][3][i])
+						Bar.MidR(WIGHT,31,"&6Отсутствует компонент: &4" .. progs[sel][3][i])
 						os.sleep(3)
 						DrawProgs(sel)
 						return
@@ -172,15 +172,15 @@ function Click(w,h)
 				shell.execute("reboot")
 			elseif w>=mid+1 and w<=mid+20 and h>=33 and h<=35 then
 				fs.remove(shell.getWorkingDirectory() .. "/" .. progs[sel][1][1] .. ".lua")
-				Sky.Get(progs[sel][2],progs[sel][1][1] .. ".lua",mid-19,31)
-				Sky.MidR(WIGHT,31,"                                        ")
+				Bar.Get(progs[sel][2],progs[sel][1][1] .. ".lua",mid-19,31)
+				Bar.MidR(WIGHT,31,"                                        ")
 				DrawProgs(sel)
 				return
 			end
 		else
 			if w>=mid-10 and w<=mid+9 and h>=33 and h<=35 then
-				Sky.Get(progs[sel][2],progs[sel][1][1] .. ".lua",mid-19,31)
-				Sky.MidR(WIGHT,31,"                                        ")
+				Bar.Get(progs[sel][2],progs[sel][1][1] .. ".lua",mid-19,31)
+				Bar.MidR(WIGHT,31,"                                        ")
 				DrawProgs(sel)
 				return
 			end
@@ -196,13 +196,13 @@ function Click(w,h)
 end
 
 function Table()
-	Sky.DrawImage(mid - 28,7, shell.getWorkingDirectory() .. "/LogoSkill.lua")
-	Sky.Button(mid - 32,37,20,3,COLOR1,COLOR2,"Проги")
-	Sky.Button(mid - 10,37,20,3,COLOR1,COLOR2,"Войти в шелл")
-	Sky.Button(mid + 12,37,20,3,COLOR1,COLOR2,"Тех.панель")
-	Sky.Button(WIGHT-11,3,7,4,COLOR1,COLOR2,"")
-	Sky.Text(WIGHT-10,4,"&b┌│┐&r")
-	Sky.Text(WIGHT-10,5,"&b└─┘&r")
+	Bar.DrawImage(mid - 28,7, shell.getWorkingDirectory() .. "/LogoSkill.lua")
+	Bar.Button(mid - 32,37,20,3,COLOR1,COLOR2,"Проги")
+	Bar.Button(mid - 10,37,20,3,COLOR1,COLOR2,"Войти в шелл")
+	Bar.Button(mid + 12,37,20,3,COLOR1,COLOR2,"Тех.панель")
+	Bar.Button(WIGHT-11,3,7,4,COLOR1,COLOR2,"")
+	Bar.Text(WIGHT-10,4,"&b┌│┐&r")
+	Bar.Text(WIGHT-10,5,"&b└─┘&r")
 end
 
 function getButtons(w,h)
