@@ -14,7 +14,7 @@ local serial = require("serialization")
 if not fs.exists("/lib/Barlib.lua") then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Barlib.lua")
 end
-local Bar = require("Bar")
+local Bar = require("Barlib")
 local g = component.gpu
 event.shouldInterrupt = function () return false end
 --------------------Настройки--------------------
