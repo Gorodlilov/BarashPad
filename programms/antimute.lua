@@ -33,6 +33,12 @@ if msg=="-stop" then
 rem(plr)
 end
 
+if msg=="-closeapp" then
+print("\nЗакрытие программы..")
+os.sleep(1)
+os.execute("reboot")
+end
+
 
 term.clear()
 for i,k in pairs(plrs) do
