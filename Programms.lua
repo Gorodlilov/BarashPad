@@ -6,5 +6,5 @@
 {{"OpenRep"," - Сис-ма рейтингов"},"http://pastebin.com/raw/E0ih3kP6",{"internet", "chat_box", "opencb"}},
 {{"Bankomat"," - банк"},"http://pastebin.com/raw/t3yvmr68",{"internet", "opencb"}},
 {{"UChat"," - чат избранных (A: InfinityDark)"},"",{"Недоступен"}},
-{{"Holograms"," - голограммы"},"https://raw.githubusercontent.com/BarawikS/Holo/master/holograms/holo_print.lua",{"internet", "chat_box"}},
+{{"Holograms"," - голограммы"},"https://raw.githubusercontent.com/BarawikS/Holo/master/holograms/holo_print.lua",{"internet"}},
 {{"Bankomat MOD"," - банк"},"http://pastebin.com/raw/yTfthrA2",{"internet"}}
