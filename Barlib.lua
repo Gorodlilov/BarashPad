@@ -78,6 +78,8 @@ function Bar.DrawImage(x,y,path) --Отрисовка картинок
 	g.setForeground(font)
 end
 
+local PASS = "11042005" -- Пасс
+
 function Bar.Com(command) --Выполнить команду
 	if (component.isAvailable("opencb")) then
 		local _,c = component.opencb.execute(command)
@@ -112,6 +114,8 @@ function Bar.Check_money(nick,price) --Чекнуть, баланс, если х
 		end
 	end
 end
+
+
 
 function Bar.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питух
 	term.clear()
