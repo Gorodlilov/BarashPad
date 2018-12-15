@@ -49,6 +49,6 @@ for i,k in pairs(plrs) do
    if k==plr then cb.setName(plr);cb.say(msg) end
 end
 	end
-
+		end
 cb.say(INF "§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
 cb.say(INF "§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
