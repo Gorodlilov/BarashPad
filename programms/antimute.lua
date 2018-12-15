@@ -36,12 +36,12 @@ while true do
 evt,_,plr,msg=event.pull("chat_message")
 if msg=="-start" then	
 plrs[#plrs+1]=plr
-cb.say("§8[§a+§8] " ..plr)
+cb.say("§8[§a+§8] §f" ..plr)
 end
 
 if msg=="-stop" then
 rem(plr)
-cb.say("§8[§c-§8] ".. plr)
+cb.say("§8[§c-§8] §f".. plr)
 end
 
 if msg=="-closeapp" then
