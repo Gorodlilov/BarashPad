@@ -10,6 +10,7 @@ local event=require("event")
 local component=require("component")
 local cb=component.chat_box
 local plrs={}
+local colors = require("colors")
 cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
