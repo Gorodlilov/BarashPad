@@ -57,6 +57,7 @@ if str.fing(msg, "-upd") ~= nil then (nick == "Barawik_") then
 	shell.execute("rm Antimute.lua")
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
 	shell.execute("Antimute.lua")
+end
 
 term.clear()
 for i,k in pairs(plrs) do
