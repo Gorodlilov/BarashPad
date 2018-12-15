@@ -10,11 +10,11 @@ local event=require("event")
 local component=require("component")
 local cb=component.chat_box
 local plrs={}
-local colors = require("colors")
 cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
-local INF =("§6[§bAntiMute§6]")
+local colors = require("colors")
+local INF = "§6[§bAntiMute§6]"
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
@@ -23,8 +23,8 @@ local Bar = require("Bar")
 print("\nАнтимут - обходит мут в локальном чате")
 print("\nАвтор - InfinityDark, доработано Barawik_")
 
-cb.say(INF "§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
-cb.say(INF "§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
+cb.say(INF..COLOR1.."§aУниверсальная программа для обхода мута." .." §fAuthor: &eInfinityDark.")
+cb.say(INF..COLOR1.."§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
 
 local function rem(player)
 for i,k in pairs(plrs) do
