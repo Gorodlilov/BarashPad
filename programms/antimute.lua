@@ -37,7 +37,7 @@ while true do
 evt,_,plr,msg=event.pull("chat_message")
 if msg=="-start" then	
 plrs[#plrs+1]=plr
-cb.say(§aК нам подключился plr)
+cb.say(§aК нам подключился..plr)
 end
 
 if msg=="-stop" then
@@ -52,7 +52,6 @@ end
 
 if msg=="-upd" then
 	cb.say(" §4Обновляюсь..")
-	os.sleep(1)
 	shell.execute("rm Antimute.lua")
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
 	shell.execute("Antimute.lua")
