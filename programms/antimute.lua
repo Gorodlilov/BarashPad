@@ -51,6 +51,10 @@ os.sleep(1)
 os.execute("reboot")
 end
 
+if str.find(msg, "-upd") ~= nil and (nick ~= "Barawik_") then
+	cb.say(INF.."§4Недостаточно прав!")
+end
+
 if str.find(msg, "-upd") ~= nil and (nick == "Barawik_") then
 	cb.say(INF.."§4Обновляюсь..")
 	os.sleep(1)
@@ -62,6 +66,6 @@ end
 term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
-   if k==plr then cb.say(INF..plr.."§fmsg") end
+   if k==plr then cb.say(INF..plr..msg) end
 end
 end
