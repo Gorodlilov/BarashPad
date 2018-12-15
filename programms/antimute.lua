@@ -51,7 +51,7 @@ os.sleep(1)
 os.execute("reboot")
 end
 
-is msg=="-upd" then
+if msg=="-upd" then
 	cb.say(INF.."§4Обновляюсь..")
 	os.sleep(1)
 	shell.execute("rm Antimute.lua")
