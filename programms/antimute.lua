@@ -23,8 +23,8 @@ local Bar = require("Bar")
 print("\nАнтимут - обходит мут в локальном чате")
 print("\nАвтор - InfinityDark, доработано Barawik_")
 
-cb.say(INF..COLOR1.."§aУниверсальная программа для обхода мута." .." §fAuthor: &eInfinityDark.")
-cb.say(INF..COLOR1.."§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
+cb.say(INF.."§aУниверсальная программа для обхода мута." .." §fAuthor: &eInfinityDark.")
+cb.say(INF.."§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
 
 local function rem(player)
 for i,k in pairs(plrs) do
