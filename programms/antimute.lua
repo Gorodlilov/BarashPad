@@ -15,17 +15,15 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 local colors = require("colors")
-local INF = "§6[§bAntiMute§6]"
+cb.setName("§6[§bAntiMute§6]")
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
 
-print("\nАнтимут - обходит мут в локальном чате")
-print("\nАвтор - InfinityDark, доработано Barawik_")
 
-cb.say(INF.."§aУниверсальная программа для обхода мута." .." §fAuthor: §eInfinityDark.")
-cb.say(INF.."§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
+cb.say("§aУниверсальная программа для обхода мута." .." §fAuthor: §eInfinityDark.")
+cb.say("§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
 
 local function rem(player)
 for i,k in pairs(plrs) do
@@ -37,7 +35,7 @@ end
 
 while true do
 evt,_,plr,msg=event.pull("chat_message")
-if msg=="-start" then
+if msg=="-start" then	
 plrs[#plrs+1]=plr
 end
 
@@ -52,7 +50,7 @@ os.execute("reboot")
 end
 
 if msg=="-upd" then
-	cb.say(INF.."§4Обновляюсь..")
+	cb.say("§4Обновляюсь..")
 	os.sleep(1)
 	shell.execute("rm Antimute.lua")
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
@@ -62,6 +60,6 @@ end
 term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
-   if k==plr then cb.say(INF..plr..msg) end
+   if k==plr then cb.say(plr..msg) end
 end
 end
