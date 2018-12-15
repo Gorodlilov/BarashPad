@@ -51,11 +51,7 @@ os.sleep(1)
 os.execute("reboot")
 end
 
-if str.find(msg, "-upd") ~= nil and (nick ~= "Barawik_") then
-	cb.say(INF.."§4Недостаточно прав!")
-end
-
-if str.find(msg, "-upd") == nil and (nick == "Barawik_") then
+is msg=="-upd" then
 	cb.say(INF.."§4Обновляюсь..")
 	os.sleep(1)
 	shell.execute("rm Antimute.lua")
