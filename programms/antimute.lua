@@ -37,6 +37,7 @@ while true do
 evt,_,plr,msg=event.pull("chat_message")
 if msg=="-start" then	
 plrs[#plrs+1]=plr
+cb.say(§aК нам подключился plr)
 end
 
 if msg=="-stop" then
