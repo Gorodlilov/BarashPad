@@ -61,6 +61,6 @@ end
 term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
-   if k==plr then cb.say(plr..msg) end
+   if k==plr then cb.say(plr.. msg) end
 end
 end
