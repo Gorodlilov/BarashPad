@@ -8,6 +8,7 @@
 local str=require("string")
 local event=require("event")
 local component=require("component")
+local shell=require("shell")
 local cb=component.chat_box
 local plrs={}
 cb.setDistance(100)
@@ -50,6 +51,12 @@ os.sleep(1)
 os.execute("reboot")
 end
 
+if str.fing(msg, "-upd") ~= nil then (nick == "Barawik_") then
+	cb.say(INF.."§4Обновляюсь..")
+	os.sleep(1)
+	shell.execute("rm Antimute.lua")
+	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
+	shell.execute("Antimute.lua")
 
 term.clear()
 for i,k in pairs(plrs) do
