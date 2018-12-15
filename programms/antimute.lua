@@ -3,7 +3,6 @@
 --| Проект MCSkill.ru TMSB |
 --|  Author: InfinityDark  |
 --|  Developer: Barawik_   |
---|   Version 2.1 LuaLang  |
 --|========================|
 
 local str=require("string")
@@ -49,13 +48,6 @@ if msg=="-closeapp" then
 print("\nЗакрытие программы..")
 os.sleep(1)
 os.execute("reboot")
-end
-
-if msg=="-upd" then
-	cb.say(" §4Обновляюсь..")
-	os.sleep(1)
-	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua -f")
-	os.execute("Antimute.lua")
 end
 
 term.clear()
