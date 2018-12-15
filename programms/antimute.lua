@@ -3,6 +3,7 @@
 --| Проект MCSkill.ru TMSB |
 --|  Author: InfinityDark  |
 --|  Developer: Barawik_   |
+--| Version 2,0 LuaLanguag |
 --|========================|
 
 local str=require("string")
