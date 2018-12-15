@@ -14,13 +14,16 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 term.clear()
-local INF = "§6[§bAntiMute§6] §f"
+local INF = "§6[§bAntiMute§6]"
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
 
 print("\nАнтимут - обходит мут в локальном чате")
 print("\nАвтор - InfinityDark, доработано Barawik_")
+
+cb.say(INF "§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
+cb.say(INF "§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
 
 local function rem(player)
 for i,k in pairs(plrs) do
@@ -44,11 +47,12 @@ if msg=="-closeapp" then
 print("\nЗакрытие программы..")
 os.sleep(1)
 os.execute("reboot")
+end
+
+
+term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
    if k==plr then cb.setName(plr);cb.say(msg) end
 end
-	end
-		end
-cb.say(INF "§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
-cb.say(INF "§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
+end
