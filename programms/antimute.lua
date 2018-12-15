@@ -13,8 +13,8 @@ local plrs={}
 cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
-term.clear()
 local INF = "§6[§bAntiMute§6]"
+term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
