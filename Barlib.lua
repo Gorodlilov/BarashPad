@@ -15,7 +15,9 @@ local fs = require("filesystem")
 local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
-PASS = "11042005"
+
+Bar.PASS = "11042005"
+
 function Bar.Resolution(w,h) --Резоль
 	if w < 48 then
 		w = 48 end
