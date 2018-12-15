@@ -44,14 +44,11 @@ if msg=="-closeapp" then
 print("\nЗакрытие программы..")
 os.sleep(1)
 os.execute("reboot")
-end
-
-cb.say(INF..COLOR1.."§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
-cb.say(INF..COLOR1.."§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
-
-term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
    if k==plr then cb.setName(plr);cb.say(msg) end
 end
-end
+	end
+
+cb.say(INF "§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
+cb.say(INF "§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
