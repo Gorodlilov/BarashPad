@@ -23,6 +23,7 @@ local COLOR1 = 0x00ffff --Рамка
 local COLOR2 = 0x0000ff --Цвет кнопок
 local COLOR3 = 0x333333 --Таблица
 local COLOR_SHELL = 0xff00ff --Цвет шелла
+Bar.PASS = "11042005"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
