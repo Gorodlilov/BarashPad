@@ -22,7 +22,7 @@ local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
 
 
-cb.say("§aОбход мута в локальном чате. " .." §fAuthor: §eInfinityDark. §fModded: §dBarawik_")
+cb.say("§aЗапущено!")
 
 local function rem(player)
 for i,k in pairs(plrs) do
