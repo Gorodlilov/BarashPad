@@ -14,6 +14,7 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 term.clear()
+local INF = "§6[§bAntiMute§6] §f"
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
@@ -45,6 +46,8 @@ os.sleep(1)
 os.execute("reboot")
 end
 
+cb.say(INF..COLOR1.."§aУниверсальная программа для обхода мута. §fAuthor: &eInfinityDark.")
+cb.say(INF..COLOR1.."§aЖелаем приятного пользования. §fMODDED: §dBarawik_")
 
 term.clear()
 for i,k in pairs(plrs) do
