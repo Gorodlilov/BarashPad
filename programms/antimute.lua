@@ -15,15 +15,15 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 local colors = require("colors")
-cb.setName("§bAntiMute§6")
+cb.setName("§bAntiMute§7 ")
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
 
 
-cb.say("§aУниверсальная программа для обхода мута." .." §fAuthor: §eInfinityDark.")
-cb.say("§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
+cb.say("§aУниверсальная программа для обхода мута в локальном чате. " .." §fAuthor: §eInfinityDark.")
+cb.say("§aЖелаем приятного пользования. ".. " §fMODDED: §dBarawik_")
 
 local function rem(player)
 for i,k in pairs(plrs) do
@@ -50,7 +50,7 @@ os.execute("reboot")
 end
 
 if msg=="-upd" then
-	cb.say("§4Обновляюсь..")
+	cb.say(" §4Обновляюсь..")
 	os.sleep(1)
 	shell.execute("rm Antimute.lua")
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
