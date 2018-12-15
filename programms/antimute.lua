@@ -15,15 +15,14 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 local colors = require("colors")
-cb.setName("§bAntiMute§7 ")
+cb.setName("§bAntiMute§7")
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
 
 
-cb.say("§aУниверсальная программа для обхода мута в локальном чате. " .." §fAuthor: §eInfinityDark.")
-cb.say("§aЖелаем приятного пользования. ".. " §fMODDED: §dBarawik_")
+cb.say("§aОбход мута в локальном чате. " .." §fAuthor: §eInfinityDark. §fModded: §dBarawik_")
 
 local function rem(player)
 for i,k in pairs(plrs) do
@@ -37,11 +36,12 @@ while true do
 evt,_,plr,msg=event.pull("chat_message")
 if msg=="-start" then	
 plrs[#plrs+1]=plr
-cb.say(К нам подключился ..plr)
+cb.say("§8[§a+§8] " ..plr)
 end
 
 if msg=="-stop" then
 rem(plr)
+cb.say("§8[§c-§8] ".. plr)
 end
 
 if msg=="-closeapp" then
@@ -60,6 +60,6 @@ end
 term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
-   if k==plr then cb.say(plr.. msg) end
+   if k==plr then cb.say(plr .. msg) end
 end
 end
