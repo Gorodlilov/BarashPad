@@ -23,7 +23,7 @@ local Bar = require("Bar")
 print("\nАнтимут - обходит мут в локальном чате")
 print("\nАвтор - InfinityDark, доработано Barawik_")
 
-cb.say(INF.."§aУниверсальная программа для обхода мута." .." §fAuthor: &eInfinityDark.")
+cb.say(INF.."§aУниверсальная программа для обхода мута." .." §fAuthor: §eInfinityDark.")
 cb.say(INF.."§aЖелаем приятного пользования.".. "§fMODDED: §dBarawik_")
 
 local function rem(player)
@@ -54,6 +54,6 @@ end
 term.clear()
 for i,k in pairs(plrs) do
    g.set(1,i,k)
-   if k==plr then cb.setName(plr);cb.say(msg) end
+   if k==plr then cb.say(..plr..msg) end
 end
 end
