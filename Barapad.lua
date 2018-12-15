@@ -23,7 +23,6 @@ local COLOR1 = 0x00ffff --Рамка
 local COLOR2 = 0x0000ff --Цвет кнопок
 local COLOR3 = 0x333333 --Таблица
 local COLOR_SHELL = 0xff00ff --Цвет шелла
-local PASS = "11042005" -- Пасс
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
@@ -52,7 +51,7 @@ function Login()
 	Bar.MidR(WIGHT,32,"Введите пароль:")
 	term.setCursor(mid-2,33)
 	local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
-	if p==PASS then
+	if p==Bar.PASS then
 		if nick then
 			login = true
 			Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
@@ -106,7 +105,6 @@ function ProgrammPanel()
 	for i = 1, 9 do 
 		Bar.MidR(WIGHT,i+16, "┃                                                     ┃                ┃          ┃")
 	end
-	Bar.MidR(WIGHT,26, "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┻━━━━━━━━━━┛")
 	DrawProgs(0)
 	prog = true
 end
@@ -214,7 +212,7 @@ function getButtons(w,h)
 		g.setForeground(COLOR1)
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barapad.lua Barapad.lua")
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
-		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Barlib.lua")
+		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
 		print("\nРестарт...")
 		os.sleep(2)
 		shell.execute("reboot")
