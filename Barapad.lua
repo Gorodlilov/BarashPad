@@ -43,7 +43,7 @@ file = io.open(shell.getWorkingDirectory() .. "/Programms.lua", "r")
 local progs = serial.unserialize("{" .. file:read(9999999) .. "}")
 file:close()
 
-
+if Rules(start) then
 function Login()
 	login = false
 	prog = false
@@ -51,7 +51,7 @@ function Login()
 	Bar.ClearL(HEIGHT)
 	Bar.ClearR(WIGHT,HEIGHT)
 	
-	Rules(start)
+	if Rules(start) then
 	
 	g.setForeground(COLOR1)
 	Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
@@ -89,6 +89,7 @@ function Login()
 			shell.execute("/UPDBar.lua")
 	end
 		end
+end
 end
 
 function Rules(start)
