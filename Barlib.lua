@@ -586,7 +586,6 @@ function Bar.Symbol(x,y,symbol,ramka) --Символы шрифта
 		g.set(x+1,y,  "▄▄▄▄▄")
 		g.set(x+1,y+1," ▄▄▄▀")
 		g.set(x+1,y+2,"█▄▄▄▄")
-	end
 	elseif symbol == "2" then
 		g.set(x+1,y,  "▄▄▄▄▄")
 		g.set(x+1,y+1," ▄▄▄▀")
@@ -599,6 +598,7 @@ function Bar.Symbol(x,y,symbol,ramka) --Символы шрифта
 		g.set(x+1,y,  "▄▄▄▄▄")
 		g.set(x+1,y+1,"█   █")
 		g.set(x+1,y+2,"█▄▄▄█")
+	end
 	g.setBackground(WBack)
 end
 
