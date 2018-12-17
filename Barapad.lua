@@ -43,20 +43,6 @@ file = io.open(shell.getWorkingDirectory() .. "/Programms.lua", "r")
 local progs = serial.unserialize("{" .. file:read(9999999) .. "}")
 file:close()
 
-function Rules(start)
-		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,5,"==========================")
-		Bar.MidL(WIGHT,11,"==========================")
-		Bar.MidL(WIGHT,15,"==========================")
-		g.setForeground(COLOR1)
-		Bar.MidL(WIGHT,3, "Общая инфа:")
-		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
-		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
-		Bar.MidL(WIGHT,8, "Но если над другой, то")
-		Bar.MidL(WIGHT,9, "в настройках каждой проги")
-		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
-		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
-end
 
 function Login()
 	login = false
@@ -103,6 +89,21 @@ function Login()
 			shell.execute("/UPDBar.lua")
 	end
 		end
+end
+
+function Rules(start)
+		g.setForeground(COLOR2)
+		Bar.MidL(WIGHT,5,"==========================")
+		Bar.MidL(WIGHT,11,"==========================")
+		Bar.MidL(WIGHT,15,"==========================")
+		g.setForeground(COLOR1)
+		Bar.MidL(WIGHT,3, "Общая инфа:")
+		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
+		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
+		Bar.MidL(WIGHT,8, "Но если над другой, то")
+		Bar.MidL(WIGHT,9, "в настройках каждой проги")
+		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
+		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
 end
 
 function Rules(nick)
