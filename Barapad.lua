@@ -70,7 +70,7 @@ function Login()
 	if p==Bar.OFF then
 		if nick then
 			login = true
-			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick)
+			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "перезапускаюсь..")
 			os.sleep(2)
 			shell.execute("reboot")
 	end
@@ -78,9 +78,12 @@ function Login()
 	if p==Bar.UPD then
 		if nick then
 			login = true
-			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick)
+			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "запускаю обновлялку..")
 			os.sleep(2)
-			shell.execute("UPDBar.lua")
+			shell.execute("rm UPDBar.lua")
+			os.sleep(1)
+			shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
+			shell.execute("/UPDBar.lua")
 	end
 		end
 end
