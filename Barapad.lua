@@ -43,7 +43,7 @@ file = io.open(shell.getWorkingDirectory() .. "/Programms.lua", "r")
 local progs = serial.unserialize("{" .. file:read(9999999) .. "}")
 file:close()
 
-function PassNick
+function PassNick()
 		g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,5,"==========================")
 		Bar.MidL(WIGHT,11,"==========================")
