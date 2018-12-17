@@ -28,6 +28,10 @@ if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
 end
 
+if not (fs.exists(shell.getWorkingDirectory() .. "/UPDBar.lua")) then
+	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
+end
+
 local mid = (WIGHT-32)/2+32
 local login, prog, tech = false, false, false
 local sel = 0
