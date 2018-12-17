@@ -43,13 +43,34 @@ file = io.open(shell.getWorkingDirectory() .. "/Programms.lua", "r")
 local progs = serial.unserialize("{" .. file:read(9999999) .. "}")
 file:close()
 
+function PassNick
+		g.setForeground(COLOR2)
+		Bar.MidL(WIGHT,5,"==========================")
+		Bar.MidL(WIGHT,11,"==========================")
+		Bar.MidL(WIGHT,15,"==========================")
+		Bar.MidL(WIGHT,31,"Добро пожаловать")
+		g.setForeground(COLOR1)
+		Bar.MidL(WIGHT,3, "Общая инфа:")
+		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
+		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
+		Bar.MidL(WIGHT,8, "Но если над другой, то")
+		Bar.MidL(WIGHT,9, "в настройках каждой проги")
+		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
+		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
+		Bar.MidL(WIGHT,32,nick)
+		Bar.Button(7,34,18,3,COLOR1,COLOR2,"Обновить")
+		Bar.Button(7,37,18,3,COLOR1,COLOR2,"Выйти")
+end
+
 function Login()
 	login = false
 	prog = false
 	tech = false
 	Bar.ClearL(HEIGHT)
 	Bar.ClearR(WIGHT,HEIGHT)
-	Rules()
+	
+	PassNick()
+	
 	g.setForeground(COLOR1)
 	Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
 	Bar.MidR(WIGHT,32,"Введите пароль:")
