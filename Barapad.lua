@@ -123,6 +123,7 @@ function Login()
 			os.sleep(1)
 			Login()
 end
+end
 
 
 function Rules(nick)
