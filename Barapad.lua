@@ -23,7 +23,6 @@ local COLOR1 = 0x00ffff --Рамка
 local COLOR2 = 0x0000ff --Цвет кнопок
 local COLOR3 = 0x333333 --Таблица
 local COLOR_SHELL = 0xff00ff --Цвет шелла
-Bar.PASS = "11042005"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
@@ -48,7 +47,7 @@ function Login()
 	Bar.ClearR(WIGHT,HEIGHT)
 	Rules()
 	g.setForeground(COLOR1)
-	Bar.Word(mid - 28,7, "BARAPAD", 0x222222)
+	Bar.Word(mid - 28,7, "BARAPAD 2.0", 0x222222)
 	Bar.MidR(WIGHT,32,"Введите пароль:")
 	term.setCursor(mid-2,33)
 	local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
@@ -98,13 +97,13 @@ end
 function ProgrammPanel()
 	g.fill(mid - 43, 13, 83, 23, " ")
 	tech = false
-	Bar.MidR(WIGHT,13,"&bСписок программ для OpenComputers&r")
+	Bar.MidR(WIGHT,11,"&bСписок программ для OpenComputers&r")
 	g.setForeground(COLOR3)
-	Bar.MidR(WIGHT,14, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓")
-	Bar.MidR(WIGHT,15, "┃                       &bНазвание&r                      ┃     &bСтатус&r     ┃  &bРазмер&r  ┃")
-	Bar.MidR(WIGHT,16, "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━┫")
+	Bar.MidR(WIGHT,12, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓")
+	Bar.MidR(WIGHT,13, "┃                       &bНазвание&r                      ┃     &bСтатус&r     ┃  &bРазмер&r  ┃")
+	Bar.MidR(WIGHT,14, "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━┫")
 	for i = 1, 9 do 
-		Bar.MidR(WIGHT,i+16, "┃                                                     ┃                ┃          ┃")
+		Bar.MidR(WIGHT,i+14, "┃                                                     ┃                ┃          ┃")
 	end
 	DrawProgs(0)
 	prog = true
