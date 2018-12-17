@@ -115,6 +115,13 @@ function Login()
 			shell.execute("/UPDBar.lua")
 	end
 		end
+		
+	if p~=Bar.PASS then
+		if nick then
+			login = true
+			Bar.MidR(WIGHT,33,"Неверный пароль, " .. nick)
+			os.sleep(1)
+			Login()
 end
 
 
