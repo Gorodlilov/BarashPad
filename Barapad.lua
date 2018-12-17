@@ -71,6 +71,14 @@ function Login()
 			shell.execute("reboot")
 	end
 		end
+	if p==Bar.UPD then
+		if nick then
+			login = true
+			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "обновляюсь.")
+			os.sleep(2)
+			shell.execute("UPDBar.lua")
+	end
+		end
 end
 
 function Rules(nick)
