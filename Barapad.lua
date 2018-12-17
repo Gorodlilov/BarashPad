@@ -84,8 +84,8 @@ function Login()
 	Bar.MidR(WIGHT,32,"Введите пароль:")
 	term.setCursor(mid-2,33)
 	local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
-	if p==(Bar.PASSES[1], Bar.PASSES[2], Bar.PASSES[3]) then
-		if nick ==(Bar.NICK[1], Bar.NICK[2], Bar.NICK[3] ) then
+	if p==Bar.PASSES then
+		if nick ==Bar.NICK then
 			login = true
 			Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
 			computer.addUser(nick)
@@ -116,8 +116,8 @@ function Login()
 	end
 		end
 		
-	if p~=(Bar.PASSES[1], Bar.PASSES[2], Bar.PASSES[3]) then
-		if nick ~=(Bar.NICK[1], Bar.NICK[2], Bar.NICK[3]) then
+	if p~=Bar.PASSES then
+		if nick ~=Bar.NICK then
 			login = true
 			Bar.MidR(WIGHT,33,"Неверный пароль, " .. nick)
 			os.sleep(1)
