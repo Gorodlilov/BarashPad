@@ -43,7 +43,6 @@ file = io.open(shell.getWorkingDirectory() .. "/Programms.lua", "r")
 local progs = serial.unserialize("{" .. file:read(9999999) .. "}")
 file:close()
 
-if Rules(start) then
 function Login()
 	login = false
 	prog = false
@@ -51,7 +50,24 @@ function Login()
 	Bar.ClearL(HEIGHT)
 	Bar.ClearR(WIGHT,HEIGHT)
 	
-	if Rules(start) then
+	Rules()
+	
+	-- Информация слева
+	
+			g.setForeground(COLOR2)
+		Bar.MidL(WIGHT,5,"==========================")
+		Bar.MidL(WIGHT,11,"==========================")
+		Bar.MidL(WIGHT,15,"==========================")
+		g.setForeground(COLOR1)
+		Bar.MidL(WIGHT,3, "Общая инфа:")
+		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
+		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
+		Bar.MidL(WIGHT,8, "Но если над другой, то")
+		Bar.MidL(WIGHT,9, "в настройках каждой проги")
+		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
+		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
+	
+	-- Конец информации
 	
 	g.setForeground(COLOR1)
 	Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
@@ -90,22 +106,7 @@ function Login()
 	end
 		end
 end
-end
 
-function Rules(start)
-		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,5,"==========================")
-		Bar.MidL(WIGHT,11,"==========================")
-		Bar.MidL(WIGHT,15,"==========================")
-		g.setForeground(COLOR1)
-		Bar.MidL(WIGHT,3, "Общая инфа:")
-		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
-		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
-		Bar.MidL(WIGHT,8, "Но если над другой, то")
-		Bar.MidL(WIGHT,9, "в настройках каждой проги")
-		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
-		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
-end
 
 function Rules(nick)
 	if (login) then
