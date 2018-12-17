@@ -16,7 +16,13 @@ local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
 
+--========База паролей======
+
 Bar.PASS = "11042005"
+Bar.OFF = "1104OFF"
+Bar.UPD = "1104UPD"
+
+--==========================
 
 function Bar.Resolution(w,h) --Резоль
 	if w < 48 then
