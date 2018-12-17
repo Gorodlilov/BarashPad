@@ -24,6 +24,13 @@ Bar.UPD = "1104111"
 
 --==========================
 
+--=========МАССИВЫ==========
+
+Bar.NICK = {"Barawik_", "InfinityDark", "alexowe", "Muronuch"}
+Bar.PASSES = {"11042005","darks", "owes", "2288"}
+
+--==========================
+
 function Bar.Resolution(w,h) --Резоль
 	if w < 48 then
 		w = 48 end
