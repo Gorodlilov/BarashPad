@@ -124,6 +124,7 @@ function Login()
 			Login()
 end
 end
+end
 
 
 function Rules(nick)
