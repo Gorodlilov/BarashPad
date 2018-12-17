@@ -66,7 +66,7 @@ function Login()
 	if p==Bar.OFF then
 		if nick then
 			login = true
-			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "перезагружаюсь.")
+			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick)
 			os.sleep(2)
 			shell.execute("reboot")
 	end
@@ -74,7 +74,7 @@ function Login()
 	if p==Bar.UPD then
 		if nick then
 			login = true
-			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "обновляюсь.")
+			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick)
 			os.sleep(2)
 			shell.execute("UPDBar.lua")
 	end
