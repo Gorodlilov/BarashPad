@@ -56,16 +56,20 @@ function Login()
 	
 			g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,5,"==========================")
-		Bar.MidL(WIGHT,11,"==========================")
+		Bar.MidL(WIGHT,9,"==========================")
 		Bar.MidL(WIGHT,15,"==========================")
+		Bar.MidL(WIGHT,30,"==========================")
 		g.setForeground(COLOR1)
-		Bar.MidL(WIGHT,3, "Общая инфа:")
-		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
-		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
-		Bar.MidL(WIGHT,8, "Но если над другой, то")
-		Bar.MidL(WIGHT,9, "в настройках каждой проги")
-		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
-		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
+		Bar.MidL(WIGHT,3, "Доступ имеют:")
+		Bar.MidL(WIGHT,7, "Barawik_")
+		Bar.MidL(WIGHT,8, "InfinityDark")
+		Bar.MidL(WIGHT,11, "Хотите получить доступ?")
+		Bar.MidL(WIGHT,12, "Отпишите в личку ВК")
+		Bar.MidL(WIGHT,13, "https://vk.cc/8OUJv2")
+		Bar.MidL(WIGHT,32,"Текущая версия:")
+		g.setForeground(COLOR2)
+		Bar.MidL(WIGHT,34, "2.1")
+		
 	
 	-- Конец информации
 	
