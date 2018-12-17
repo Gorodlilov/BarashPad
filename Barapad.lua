@@ -63,6 +63,14 @@ function Login()
 			Table()
 		end
 	end
+	if p==Bar.OFF then
+		if nick then
+			login = true
+			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "перезагружаюсь.")
+			os.sleep(2)
+			shell.execute("reboot")
+	end
+		end
 end
 
 function Rules(nick)
