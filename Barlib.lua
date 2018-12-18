@@ -16,8 +16,6 @@ local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
 local cb = require("chatbox")
-cb.setName("BaraPad")
-cb.say("Добавлены ники :D")
 
 --========База команд=======
 Bar.OFF = "1104000"
@@ -26,8 +24,9 @@ Bar.UPD = "1104111"
 --=========Таблицы==========
 
 Bar.ps = {nick = {}}
-Bar.ps["Barawik_"] = "11042005"
-Bar.ps["Hedboys"] = "2277"
+Bar.ps["Barawik_"] == "11042005"
+Bar.ps["Hedboys"] == "2277"
+Bar.ps["alexowe"] == "2288"
 
 
 function Bar.Resolution(w,h) --Резоль
