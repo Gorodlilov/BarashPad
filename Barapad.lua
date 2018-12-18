@@ -58,7 +58,7 @@ function Login()
 		Bar.MidL(WIGHT,5,"==========================")
 		Bar.MidL(WIGHT,10,"==========================")
 		Bar.MidL(WIGHT,16,"==========================")
-		Bar.MidL(WIGHT,30,"==========================")
+		Bar.MidL(WIGHT,37,"==========================")
 		Bar.MidL(WIGHT,26,"==========================")
 		g.setForeground(COLOR1)
 		Bar.MidL(WIGHT,3, "&aДоступ имеют:")
@@ -72,9 +72,9 @@ function Login()
 		Bar.MidL(WIGHT,21, "      &d1104000")
 		Bar.MidL(WIGHT,23, "&6Запуск обновлялки -")
 		Bar.MidL(WIGHT,24, "      &d1104111")
-		Bar.MidL(WIGHT,32,"&fТекущая версия:")
+		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,34, "2.4.2")
+		Bar.MidL(WIGHT,40, "2.1")
 		
 	
 	-- Конец информации
@@ -84,7 +84,7 @@ g.setForeground(COLOR1)
     Bar.MidR(WIGHT,32,"Введите пароль:")
     term.setCursor(mid-2,33)
     local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
-    if p==Bar.users[nick] then
+    if p==Bar.ps[nick] then
             login = true
             Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
             computer.addUser(nick)
