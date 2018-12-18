@@ -74,28 +74,26 @@ function Login()
 		Bar.MidL(WIGHT,24, "      &d1104111")
 		Bar.MidL(WIGHT,32,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,34, "2.4.2")
+		Bar.MidL(WIGHT,34, "2.4")
 		
 	
 	-- Конец информации
 	
-	g.setForeground(COLOR1)
-	Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
-	Bar.MidR(WIGHT,32,"Введите пароль:")
-	term.setCursor(mid-2,33)
-	local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
-	if p == Bar.Infp or p == Bar.Barp or p == Bar.Hedp then
-			if nick == Bar.Infn or nick == Bar.Barn or nick == Bar.Hedn then
-			login = true
-			Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
-			computer.addUser(nick)
-			os.sleep(2)
-			Bar.ClearL(HEIGHT)
-			Bar.ClearR(WIGHT,HEIGHT)
-			Rules(nick)
-			Table()
-		end
-	end
+g.setForeground(COLOR1)
+    Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
+    Bar.MidR(WIGHT,32,"Введите пароль:")
+    term.setCursor(mid-2,33)
+    local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
+    if p==Bar.users[nick] then
+            login = true
+            Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
+            computer.addUser(nick)
+            os.sleep(2)
+            Bar.ClearL(HEIGHT)
+            Bar.ClearR(WIGHT,HEIGHT)
+            Rules(nick)
+            Table()
+    end
 	if p==Bar.OFF then
 		if nick then
 			login = true
@@ -115,14 +113,11 @@ function Login()
 			shell.execute("/UPDBar.lua")
 	end
 		end
-		
-	if p ~= Bar.Infp or p ~= Bar.Barp or p ~= Bar.Hedp then
-			if nick ~= Bar.Infn or nick ~= Bar.Barn or nick ~= Bar.Hedn then
+			if p ~=Bar.users[nick] then
 			login = false
 			Bar.MidR(WIGHT,33,"Неверный пароль, " .. nick)
 			os.sleep(1)
 			Login()
-end
 end
 end
 
