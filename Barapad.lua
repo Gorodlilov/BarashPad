@@ -83,7 +83,6 @@ g.setForeground(COLOR1)
     Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
     Bar.MidR(WIGHT,32,"Введите пароль:")
     term.setCursor(mid-2,33)
-	Bar.ps = {nick = {}}
     local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
     if p==Bar.ps[nick] then
             login = true
@@ -114,7 +113,7 @@ g.setForeground(COLOR1)
 			shell.execute("/UPDBar.lua")
 	end
 		end
-			if p ~=Bar.users[nick] then
+			if p~=Bar.ps[nick] then
 			login = false
 			Bar.MidR(WIGHT,33,"Неверный пароль, " .. nick)
 			os.sleep(1)
