@@ -93,6 +93,9 @@ g.setForeground(COLOR1)
             Bar.ClearR(WIGHT,HEIGHT)
             Rules(nick)
             Table()
+		else 
+			Bar.MidR(WIGHT,33,"Неверен логин/пароль, " .. nick)
+			
     end
 	if p==Bar.OFF then
 		if nick then
@@ -113,12 +116,6 @@ g.setForeground(COLOR1)
 			shell.execute("/UPDBar.lua")
 	end
 		end
-			if p~=Bar.ps[nick] then
-			login = false
-			Bar.MidR(WIGHT,33,"Неверный пароль, " .. nick)
-			os.sleep(1)
-			Login()
-end
 end
 
 
