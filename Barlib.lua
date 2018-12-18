@@ -23,10 +23,6 @@ Bar.UPD = "1104111"
 
 --=========Таблицы==========
 
-Bar.ps = {nick = {}}
-Bar.ps["Barawik_"] == "11042005"
-Bar.ps["Hedboys"] == "2277"
-Bar.ps["alexowe"] == "2288"
 
 
 function Bar.Resolution(w,h) --Резоль
