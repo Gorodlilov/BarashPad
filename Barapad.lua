@@ -74,7 +74,7 @@ function Login()
 		Bar.MidL(WIGHT,24, "      &d1104111")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "2.1")
+		Bar.MidL(WIGHT,40, "2.2")
 		
 	
 	-- Конец информации
@@ -83,7 +83,7 @@ g.setForeground(COLOR1)
     Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
     Bar.MidR(WIGHT,32,"Введите пароль:")
     term.setCursor(mid-2,33)
-	local Bar.ps = {nick = {}}
+	Bar.ps = {nick = {}}
     local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
     if p==Bar.ps[nick] then
             login = true
