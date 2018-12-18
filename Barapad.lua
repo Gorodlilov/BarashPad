@@ -74,7 +74,7 @@ function Login()
 		Bar.MidL(WIGHT,24, "      &d1104111")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "2.3")
+		Bar.MidL(WIGHT,40, "2.4")
 		
 	
 	-- Конец информации
