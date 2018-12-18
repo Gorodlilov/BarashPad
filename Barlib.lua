@@ -15,7 +15,6 @@ local fs = require("filesystem")
 local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
-local cb = require("chatbox")
 
 --========База команд=======
 Bar.OFF = "1104000"
