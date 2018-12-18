@@ -85,7 +85,7 @@ function Login()
 	term.setCursor(mid-2,33)
 	local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
 	if p == Bar.Infp or p == Bar.Barp or p == Bar.Hedp then
-			if nick == Bar.Infn or nick == Bar.Barn or nick == Bar.Hedn
+			if nick == Bar.Infn or nick == Bar.Barn or nick == Bar.Hedn then
 			login = true
 			Bar.MidR(WIGHT,33,"Приветствую, " .. nick)
 			computer.addUser(nick)
@@ -117,7 +117,7 @@ function Login()
 		end
 		
 	if p ~= Bar.Infp or p ~= Bar.Barp or p ~= Bar.Hedp then
-			if nick ~= Bar.Infn or nick ~= Bar.Barn or nick ~= Bar.Hedn
+			if nick ~= Bar.Infn or nick ~= Bar.Barn or nick ~= Bar.Hedn then
 			login = false
 			Bar.MidR(WIGHT,33,"Неверный пароль, " .. nick)
 			os.sleep(1)
