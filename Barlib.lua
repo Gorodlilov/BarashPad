@@ -22,7 +22,9 @@ Bar.UPD = "1104111"
 
 --=========Таблицы==========
 
-Bar.users={InfinityDark="qwerty",Barawik_="12345"}
+Bar.ps = {nick = {}}
+Bar.ps["Barawik_"] = "11042005"
+Bar.ps["Hedboys"] = "2277"
 
 -- | Ники имеющие доступ |
 
