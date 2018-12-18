@@ -22,6 +22,8 @@ Bar.UPD = "1104111"
 
 --=========Таблицы==========
 
+Bar.users={InfinityDark="qwerty",Barawik_="12345"}
+
 -- | Ники имеющие доступ |
 
 Bar.Infn = "InfinityDark"
