@@ -15,6 +15,9 @@ local fs = require("filesystem")
 local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
+local cb = require("chatbox")
+cb.setName("BaraPad")
+cb.say("Добавлены ники :D")
 
 --========База команд=======
 Bar.OFF = "1104000"
@@ -26,16 +29,6 @@ Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["Hedboys"] = "2277"
 
--- | Ники имеющие доступ |
-
-Bar.Infn = "InfinityDark"
-Bar.Infp = "3377"
-
-Bar.Barn = "Barawik_"
-Bar.Barp = "11042005"
-
-Bar.Hedn = "Hedboys"
-Bar.Hedp = "2288"
 
 function Bar.Resolution(w,h) --Резоль
 	if w < 48 then
