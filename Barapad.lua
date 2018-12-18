@@ -95,7 +95,8 @@ g.setForeground(COLOR1)
             Table()
 		else 
 			Bar.MidR(WIGHT,33,"Неверен логин/пароль, " .. nick)
-			
+			os.sleep(1)
+			Login()
     end
 	if p==Bar.OFF then
 		if nick then
