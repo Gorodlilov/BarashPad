@@ -243,16 +243,7 @@ end
 function getButtons(w,h)
 	if w>=7 and w<= 25 and h>=34 and h<=36 then --Кнопка обновить
 		term.clear()
-		fs.remove(shell.getWorkingDirectory() .. "/Barapad.lua")	
-		fs.remove(shell.getWorkingDirectory() .. "/Programms.lua")
-		fs.remove("/lib/Bar.lua")
-		g.setForeground(COLOR1)
-		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barapad.lua Barapad.lua")
-		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
-		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
-		print("\nРестарт...")
-		os.sleep(2)
-		shell.execute("reboot")
+		os.execute("/UPDBar.lua")
 	elseif w>=7 and w<= 25 and h>=37 and h<=39 then --Кнопка Логин
 		Login()
 	elseif w>=mid-32 and w<= mid-13 and h>=37 and h<=39 then --Кнопка Проги
