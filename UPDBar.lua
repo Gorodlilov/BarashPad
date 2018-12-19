@@ -19,38 +19,40 @@ end
 
 --------------------Настройки--------------------
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
-local COLOR1 = 0x00ffff --Рамка
-local COLOR2 = 0x0000ff --Цвет кнопок
-local COLOR3 = 0x333333 --Таблица
-local COLOR_SHELL = 0xff00ff --Цвет шелла
+local COLOR1 = 0x30626b --Рамка
+local COLOR2 = 0x240935 --Цвет кнопок
+local COLOR3 = 0x00382b --Таблица
+local COLOR_SHELL = 0xa73853 --Цвет шелла
 -------------------------------------------------
 
 WIGHT, HEIGHT = Bar.Resolution(WIGHT, HEIGHT)
 Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
 
-		Bar.Mid(WIGHT,5,"Прочитка старых файлов...")
+		Bar.Word(mid - 24,7, "BARAPAD", 0x000000)
+
+		Bar.Mid(WIGHT,26,"Прочитка старых файлов...")
 		if fs.exists("Barapad.lua") then
-		Bar.Mid(WIGHT,6,"Barapad обнаружен!")
+		Bar.Mid(WIGHT,27,"Barapad обнаружен!")
 		end
 		os.sleep(2)
 		if fs.exists("Programms.lua") then
-		Bar.Mid(WIGHT,7,"Список программ обнаружен!")
+		Bar.Mid(WIGHT,28,"Список программ обнаружен!")
 		end
 		os.sleep(2)
-		Bar.Mid(WIGHT,9,"Начинаю удалять старые файлы.")
+		Bar.Mid(WIGHT,30,"Начинаю удалять старые файлы.")
 		os.sleep(1)
 		shell.execute("rm Barapad.lua")
 		shell.execute("rm Programms.lua")
 		shell.execute("rm /lib/Bar.lua")
-		Bar.Mid(WIGHT,10,"Старый файлы все удадалены!")
+		Bar.Mid(WIGHT,31,"Старый файлы все удадалены!")
 		os.sleep(2)
-		Bar.Mid(WIGHT,11,"Начинаю закачку новых файлов.")
+		Bar.Mid(WIGHT,33,"Начинаю закачку новых файлов.")
 		os.sleep(1)
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barapad.lua Barapad.lua")
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
-		Bar.Mid(WIGHT,12,"Новые файлы загружены.")
-		Bar.Mid(WIGHT,14,"Запускаем БараПад")
+		Bar.Mid(WIGHT,35,"Новые файлы загружены.")
+		Bar.Mid(WIGHT,36,"Запускаем БараПад")
 		os.sleep(2)
 		shell.execute("Barapad.lua")
 		
