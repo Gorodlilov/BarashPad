@@ -19,16 +19,15 @@ local g = component.gpu
 event.shouldInterrupt = function () return false end
 --------------------Настройки--------------------
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
-local COLOR1 = 0x00ffff --Рамка
-local COLOR2 = 0x0000ff --Цвет кнопок
-local COLOR3 = 0x333333 --Таблица
-local COLOR_SHELL = 0xff00ff --Цвет шелла
+local COLOR1 = 0x30626b --Рамка
+local COLOR2 = 0x240935 --Цвет кнопок
+local COLOR3 = 0x00382b --Таблица
+local COLOR_SHELL = 0xa73853 --Цвет шелла
 
 Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["InfinityDark"] = "2277"
 Bar.ps["alexowe"] = "2288"
-Bar.upd = "1104111"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
@@ -63,7 +62,7 @@ function Login()
 		Bar.MidL(WIGHT,5,"&a==========================")
 		Bar.MidL(WIGHT,10,"&a==========================")
 		Bar.MidL(WIGHT,37,"&a==========================")
-		Bar.MidL(WIGHT,26,"&a==========================")
+		Bar.MidL(WIGHT,21,"&a==========================")
 		Bar.MidL(WIGHT,16,"&a==========================")
 		Bar.MidL(WIGHT,3, "&aBaraPad by:")
 		Bar.MidL(WIGHT,7, "&bBarawik_")
@@ -73,7 +72,8 @@ function Login()
 		Bar.MidL(WIGHT,14, "&chttps://vk.cc/8OUJv2")
 		Bar.MidL(WIGHT,18, "&fПолучить пароль доступа:")
 		Bar.MidL(WIGHT,19, "&fhttps://discord.gg/vQNqtan")
-
+		Bar.MidL(WIGHT,23, "&fИзменения:")
+		Bar.MidL(WIGHT,24, "&b1. Изменены цвета программы")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,40, "&c2.1")
