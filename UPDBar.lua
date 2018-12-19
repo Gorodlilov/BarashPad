@@ -28,7 +28,7 @@ local COLOR_SHELL = 0xa73853 --Цвет шелла
 WIGHT, HEIGHT = Bar.Resolution(WIGHT, HEIGHT)
 Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
 
-		Bar.Word(mid - 24,7, "BARAPAD", 0x000000)
+		Bar.Word(mid - 24,7, "UPDBar", 0x000000)
 
 		Bar.Mid(WIGHT,26,"Прочитка старых файлов...")
 		if fs.exists("Barapad.lua") then
@@ -52,7 +52,7 @@ Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barapad.lua Barapad.lua")
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
 		Bar.Mid(WIGHT,35,"Новые файлы загружены.")
-		Bar.Mid(WIGHT,36,"Перезагружаем компутер...")
+		Bar.Mid(WIGHT,36,"Запускаем БараПад")
 		os.sleep(2)
-		shell.execute("reboot")
+		shell.execute("Barapad.lua")
 		
