@@ -1,8 +1,8 @@
 --|=========================|
---|  BarLibrary | СкайБибла |
+--|  BarLibrary | БарБибла  |
 --|  Проект MCSkill.ru TMSB |
 --|   Developer: Barawik_   |
---|  Author: BarDrive_ love |
+--|  Author: SkyDrive_ love |
 --|=========================|
 local Bar = {}
 local component = require("component")
@@ -120,7 +120,7 @@ end
 
 function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	term.clear()
-	g.setBackground(0xA9A9A9)
+	g.setBackground(0x013220)
 	g.setForeground(col2)
 	for i = 1, w do
 		g.set(i,1,"=")
@@ -145,7 +145,7 @@ function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	else
 		Bar.Text(w/2 - unicode.len(name)/2,1,name)
 	end
-	g.set(w-40,h,"Developer Barawik_")
+	g.set(w-40,h,"Barawik_ & InfinityDark")
 end
 
 function Bar.SetColor(index) --Список цветов
