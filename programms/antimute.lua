@@ -6,6 +6,8 @@
 --| Version 2,0 LuaLanguag |
 --|========================|
 
+-- | Планируется графический интерфейс.
+
 local str=require("string")
 local event=require("event")
 local component=require("component")
@@ -16,7 +18,7 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 local colors = require("colors")
-cb.setName("§bAntiMute 2.0§7")
+cb.setName("§bAntiMute§7")
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
@@ -35,14 +37,14 @@ end
 
 while true do
 evt,_,plr,msg=event.pull("chat_message")
-if nick ~= plrs then
+if plr ~= plrs then
 if msg=="-start" then	
 plrs[#plrs+1]=plr
 cb.say("§8[§a+§8] §f" ..plr)
 end
 	end
 
-	if nick ~= plrs then
+	if plr ~= plrs then
 if msg=="-stop" then
 rem(plr)
 cb.say("§8[§c-§8] §f".. plr)
