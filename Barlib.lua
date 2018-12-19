@@ -16,11 +16,6 @@ local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
 
---========База команд=======
-Bar.OFF = "1104000"
-Bar.UPD = "1104111"
-
---=========Таблицы==========
 
 
 
@@ -123,9 +118,9 @@ end
 
 
 
-function Bar.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питух
+function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	term.clear()
-	g.setBackground(0x000000)
+	g.setBackground(0xA9A9A9)
 	g.setForeground(col2)
 	for i = 1, w do
 		g.set(i,1,"=")
@@ -143,14 +138,14 @@ function Bar.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питу�
 	else
 		Bar.Text(w/2 - unicode.len("[ " .. name .. " ]")/2,1,"[ " .. name .. " ]")
 	end
-	g.set(w-42,h,"[ Developer: Barawik_  ]")
+	g.set(w-42,h,"[Barawik_ & InfinityDark]")
 	g.setForeground(col1)
 	if double == nil then
 		Bar.MidR(w,1,name)
 	else
 		Bar.Text(w/2 - unicode.len(name)/2,1,name)
 	end
-	g.set(w-40,h,"Developer Barawik_ ")
+	g.set(w-40,h,"Developer Barawik_")
 end
 
 function Bar.SetColor(index) --Список цветов
@@ -322,14 +317,14 @@ function Bar.Time(timezone) --Получет настоящее время, ст
 end
 
 function Bar.Hex(Hcolor) --Конвертация Dec в Hex
-	local hex = "000000" .. string.format('%x', Hcolor)
+	local hex = "1a4876" .. string.format('%x', Hcolor)
 	hex = string.sub(hex, unicode.len(hex)-5, unicode.len(hex))
 	return hex
 end
 
 function Bar.Dec(Dcolor) --Конвертация Hex в Dec
 	if Dcolor == "" then
-		Dcolor = "ffffff"
+		Dcolor = "876c99"
 	end
 	local dec = string.format('%d', '0x'.. Dcolor)
 	return tonumber(dec)
@@ -359,7 +354,7 @@ function Bar.Palitra(col) --Палитра
 	{0x666666, 0x222222, 0xffffff},
 	}
 
-	g.setForeground(0x333333)
+	g.setForeground(0x534b4f)
 
 	g.set(x,y,  "█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀█")
 	g.set(x,y+1,"█                █ ██████ █")
