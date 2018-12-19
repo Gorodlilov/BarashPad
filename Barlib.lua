@@ -138,7 +138,7 @@ function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	else
 		Bar.Text(w/2 - unicode.len("[ " .. name .. " ]")/2,1,"[ " .. name .. " ]")
 	end
-	g.set(w-42,h,"[Barawik_ & InfinityDark]")
+	g.set(w-42,h,"Barawik_ & InfinityDark")
 	g.setForeground(col1)
 	if double == nil then
 		Bar.MidR(w,1,name)
