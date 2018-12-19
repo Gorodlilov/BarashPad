@@ -33,10 +33,14 @@ Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
 		Bar.Mid(WIGHT,26,"Прочитка старых файлов...")
 		if fs.exists("Barapad.lua") then
 		Bar.Mid(WIGHT,27,"Barapad обнаружен!")
+		else
+		Bar.Mid(WIGHT,27,"Barapad не обнаружен!")
 		end
 		os.sleep(2)
 		if fs.exists("Programms.lua") then
 		Bar.Mid(WIGHT,28,"Список программ обнаружен!")
+		else
+		Bar.Mid(WIGHT,28,"Список программ не обнаружен!")
 		end
 		os.sleep(2)
 		Bar.Mid(WIGHT,30,"Начинаю удалять старые файлы.")
