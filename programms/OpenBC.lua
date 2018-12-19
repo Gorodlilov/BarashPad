@@ -1,4 +1,11 @@
--- Max K / 07.06.2017 / mcskill.ru
+--|======================|
+--|   Объявления OpenBC  |
+--|    Author: Shyvana   |
+--|  Developer: Barawik_ |
+--|    For Barapad 2.0   |
+--|======================|
+
+-- Обновлениям не подлежит.
 
 local component = require("component")
 local computer = require("computer")
