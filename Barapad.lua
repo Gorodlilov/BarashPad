@@ -25,7 +25,6 @@ local COLOR3 = 0x333333 --Таблица
 local COLOR_SHELL = 0xff00ff --Цвет шелла
 
 Bar.ps = {nick = {}}
-Bar.baraw["Barawik_"] = "Barawik_"
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["Hedboys"] = "2277"
 Bar.ps["alexowe"] = "2288"
@@ -99,29 +98,10 @@ g.setForeground(COLOR1)
             Rules(nick)
             Table()
 		else 
-			Bar.MidR(WIGHT,33,"Неверен логин/пароль, " .. nick)
+			Bar.MidR(WIGHT,33,"Неверные данные, " .. nick)
 			os.sleep(1)
 			Login()
     end
-	if p==Bar.OFF then
-		if nick then
-			login = true
-			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "перезапускаюсь..")
-			os.sleep(2)
-			shell.execute("reboot")
-	end
-		end
-	if p==Bar.UPD then
-		if nick then
-			login = true
-			Bar.MidR(WIGHT,33,"Слушаюсь, " .. nick .. "запускаю обновлялку..")
-			os.sleep(2)
-			shell.execute("rm UPDBar.lua")
-			os.sleep(1)
-			shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
-			shell.execute("/UPDBar.lua")
-	end
-		end
 end
 
 
