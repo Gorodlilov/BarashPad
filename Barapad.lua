@@ -81,7 +81,7 @@ function Login()
 	-- Конец информации
 	
 g.setForeground(COLOR1)
-    Bar.Word(mid - 24,7, "BARAPAD", 0xffc0cb)
+    Bar.Word(mid - 24,7, "BARAPAD", 0x000000)
     Bar.MidR(WIGHT,32,"Введите пароль:")
     term.setCursor(mid-2,33)
     local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
