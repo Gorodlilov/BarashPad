@@ -27,6 +27,28 @@ local Bar = require("Bar")
 
 cb.say("§aЗапущено!")
 
+local function check(nick)
+for k,v in pairs(plrs) do
+if v==nick then 
+return true
+end
+while true do
+evt,_,plr,msg=event.pull("chat_message")
+if msg=="-start" then	
+plrs[#plrs+1]=plr
+cb.say("§8[§a+§8] §f" ..plr)
+end
+	end
+end
+return false
+if msg=="-stop" then
+rem(plr)
+cb.say("§8[§c-§8] §f".. plr)
+end
+	end
+end
+
+
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
@@ -35,21 +57,6 @@ if k==player then
 end
 end
 
-while true do
-evt,_,plr,msg=event.pull("chat_message")
-if plr ~= plrs then
-if msg=="-start" then	
-plrs[#plrs+1]=plr
-cb.say("§8[§a+§8] §f" ..plr)
-end
-	end
-
-	if plr ~= plrs then
-if msg=="-stop" then
-rem(plr)
-cb.say("§8[§c-§8] §f".. plr)
-end
-	end
 
 if msg=="-closeapp" then
 print("\nЗакрытие программы..")
