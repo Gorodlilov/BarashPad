@@ -1,5 +1,5 @@
 --|=========================|
---|  BarLibrary | БарБибла  |
+--| BarLibrary | Библиотека |
 --|  Проект MCSkill.ru TMSB |
 --|   Developer: Barawik_   |
 --|  Author: SkyDrive_ love |
@@ -118,10 +118,10 @@ end
 
 
 
-function Bar.Ram(name,col1,col2,w,h,double) --Рамка
+function Bar.Ram(name,col1,col2,w,h,double) --Рамка P.S. Луфф питух
 	term.clear()
-	g.setBackground(0x013220)
-	g.setForeground(0x30626b)
+	g.setBackground(0x000000)
+	g.setForeground(col2)
 	for i = 1, w do
 		g.set(i,1,"=")
 		g.set(i,h,"=")
@@ -138,14 +138,14 @@ function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	else
 		Bar.Text(w/2 - unicode.len("[ " .. name .. " ]")/2,1,"[ " .. name .. " ]")
 	end
-	g.set(w-42,h,"")
+	g.set(w-42,h,"[ Developer: Barawik_]")
 	g.setForeground(col1)
 	if double == nil then
 		Bar.MidR(w,1,name)
 	else
 		Bar.Text(w/2 - unicode.len(name)/2,1,name)
 	end
-	g.set(w-40,h,"")
+	g.set(w-40,h,"Developer Barawik_ ")
 end
 
 function Bar.SetColor(index) --Список цветов
@@ -317,14 +317,14 @@ function Bar.Time(timezone) --Получет настоящее время, ст
 end
 
 function Bar.Hex(Hcolor) --Конвертация Dec в Hex
-	local hex = "1a4876" .. string.format('%x', Hcolor)
+	local hex = "000000" .. string.format('%x', Hcolor)
 	hex = string.sub(hex, unicode.len(hex)-5, unicode.len(hex))
 	return hex
 end
 
 function Bar.Dec(Dcolor) --Конвертация Hex в Dec
 	if Dcolor == "" then
-		Dcolor = "876c99"
+		Dcolor = "ffffff"
 	end
 	local dec = string.format('%d', '0x'.. Dcolor)
 	return tonumber(dec)
@@ -354,7 +354,7 @@ function Bar.Palitra(col) --Палитра
 	{0x666666, 0x222222, 0xffffff},
 	}
 
-	g.setForeground(0x534b4f)
+	g.setForeground(0x333333)
 
 	g.set(x,y,  "█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀█")
 	g.set(x,y+1,"█                █ ██████ █")
