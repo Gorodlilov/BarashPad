@@ -121,7 +121,7 @@ end
 function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	term.clear()
 	g.setBackground(0x013220)
-	g.setForeground(col2)
+	g.setForeground(0x30626b)
 	for i = 1, w do
 		g.set(i,1,"=")
 		g.set(i,h,"=")
@@ -138,14 +138,14 @@ function Bar.Ram(name,col1,col2,w,h,double) --Рамка
 	else
 		Bar.Text(w/2 - unicode.len("[ " .. name .. " ]")/2,1,"[ " .. name .. " ]")
 	end
-	g.set(w-42,h,"Barawik_ & InfinityDark")
+	g.set(w-42,h,"")
 	g.setForeground(col1)
 	if double == nil then
 		Bar.MidR(w,1,name)
 	else
 		Bar.Text(w/2 - unicode.len(name)/2,1,name)
 	end
-	g.set(w-40,h,"Barawik_ & InfinityDark")
+	g.set(w-40,h,"")
 end
 
 function Bar.SetColor(index) --Список цветов
