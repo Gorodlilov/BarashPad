@@ -26,8 +26,9 @@ local COLOR_SHELL = 0xff00ff --Цвет шелла
 
 Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
-Bar.ps["Hedboys"] = "2277"
+Bar.ps["InfinityDark"] = "2277"
 Bar.ps["alexowe"] = "2288"
+Bar.upd = "1104111"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
@@ -59,27 +60,24 @@ function Login()
 	
 	-- Информация слева
 	
-			g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,5,"==========================")
-		Bar.MidL(WIGHT,10,"==========================")
-		Bar.MidL(WIGHT,16,"==========================")
-		Bar.MidL(WIGHT,37,"==========================")
-		g.setForeground(COLOR1)
-		Bar.MidL(WIGHT,3, "&aДоступ имеют:")
+		Bar.MidL(WIGHT,5,"&a==========================")
+		Bar.MidL(WIGHT,10,"&a==========================")
+		Bar.MidL(WIGHT,37,"&a==========================")
+		Bar.MidL(WIGHT,26,"&a==========================")
+		Bar.MidL(WIGHT,3, "&aРазрабатывется:")
 		Bar.MidL(WIGHT,7, "&bBarawik_")
 		Bar.MidL(WIGHT,8, "&bInfinityDark")
 		Bar.MidL(WIGHT,12, "&fХотите получить доступ?")
 		Bar.MidL(WIGHT,13, "&fОтпишите в личку ВК")
 		Bar.MidL(WIGHT,14, "&chttps://vk.cc/8OUJv2")
-		Bar.MidL(WIGHT,18, "&aДоступные команды:")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "2.1")
+		Bar.MidL(WIGHT,40, "&c2.1")
 	
 	-- Конец информации
 	
 g.setForeground(COLOR1)
-    Bar.Word(mid - 24,7, "BARAPAD", 0x222222)
+    Bar.Word(mid - 24,7, "BARAPAD", 0xffc0cb)
     Bar.MidR(WIGHT,32,"Введите пароль:")
     term.setCursor(mid-2,33)
     local p, nick = Bar.Read({mask = "*", max = 8, accept = "0-9a-f", blink = true, center = true, nick = true})
@@ -92,6 +90,11 @@ g.setForeground(COLOR1)
             Bar.ClearR(WIGHT,HEIGHT)
             Rules(nick)
             Table()
+	or p==Bar.upd then
+			login = true
+			Bar.MidR(WIGHT,33,"Начинаю обновление, " .. nick)
+			os.sleep(1)
+			os.execute("/UPDBar.lua")
 		else 
 			Bar.MidR(WIGHT,33,"Неверные данные, " .. nick)
 			os.sleep(1)
