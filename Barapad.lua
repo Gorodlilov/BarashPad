@@ -25,7 +25,7 @@ local COLOR3 = 0x333333 --Таблица
 local COLOR_SHELL = 0xff00ff --Цвет шелла
 
 Bar.ps = {nick = {}}
-Bar.bar["Barawik_"]
+Bar.baraw["Barawik_"] = "Barawik_"
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["Hedboys"] = "2277"
 Bar.ps["alexowe"] = "2288"
@@ -81,9 +81,6 @@ function Login()
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,40, "2.4")
-		if nick==Bar.bar then
-		Bar.Button(7,41,18,1,COLOR1,COLOR2,"Обновить")
-		end
 	
 	-- Конец информации
 	
