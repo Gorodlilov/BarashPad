@@ -10,6 +10,8 @@ c=require("component")
 term=require("term")
 ser=require("serialization")
 fs=require("filesystem")
+shell=require("shell")
+g=c.gpu
 
 term.clear()
 
@@ -24,48 +26,71 @@ local COLOR1 = 0x30626b --Рамка
 local COLOR2 = 0x240935 --Цвет кнопок
 local COLOR3 = 0x00382b --Таблица
 local COLOR_SHELL = 0xa73853 --Цвет шелла
-local mid = (WIGHT-32)/2+32 -- Центральное слово
-Bar.ansy = "1"
-Bar.ansn = "2"
+local mid = (WIGHT-32)/2+32 -- Централизация :D
+Bar.ansy = "1" -- Ответ на согласие установки на новую версии UChat'a
+Bar.ansn = "2" -- Ответ на отказ установки новой версии UChat'a
 -------------------------------------------------
+
+local mid = (WIGHT-32)/2+32
+local login, prog, tech = false, false, false
+local sel = 0
 
 WIGHT, HEIGHT = Bar.Resolution(WIGHT, HEIGHT)
 Bar.Ram("Чат избранных", COLOR1,COLOR2,WIGHT, HEIGHT)
 
+	start = false
+	dload = false
+	Bar.ClearL(HEIGHT)
+	Bar.ClearR(WIGHT,HEIGHT)
+	
+		g.setForeground(COLOR1)
 		Bar.Word(mid - 24,7, "UChat", 0x000000)
-
-Bar.MidR(WIGHT,28,"&bДобро пожаловать в мастер установки UChat от InfinityDark!")
-
+		Bar.MidR(WIGHT,28,"&bДобро пожаловать в мастер установки UChat от InfinityDark!")
 if fs.exists("UChat.lua") then
 	Bar.MidR(WIGHT,32,"&fUChat обнаружен. &dЖелаете продолжить? 1 - Да, 2 - Нет")
 	term.setCursor(mid-2,33)
-	local ans = Bar.Read({mask = "*", max = 1, accept = "0-9a-f", blink = true, center = true})
-	if ans==Bar.ansy then
+	local ans=io.Read
+	if ans==1 then
 	Bar.MidR(WIGHT,33,"Начинаю установку UChat'a..")
 	os.sleep(3)
 	Dload()
 	else
 	os.execute("UChat.lua")
 	end
+		end
+
+
+-- Проверка компонентов
+
+if not c.openperipheral_bridge then
+error("Нету моста для очечек") else
+Bar.MidL(WIGHT,15,"&bМост обнаружен.")
 end
 
-function Dload()
-print("Выполняем проверку компонентов...")
-bridge=c.openperipheral_bridge
-i=c.internet
-i=c.data
-print("Интернет карта,мост и карта данных(1 лвл) обнаружены!")
-print("Для формирования настроек чата,вам нужно ввести ID вашей установки...")
-print("Если вы не знаете что это такое,спросите у InfinityDark любым доступным способом(Discord)")
-print("Введите ваш ID:")
+if not c.data then
+error("Нету карты данных") else
+Bar.MidL(WIGHT,16,"&bКарты данных есть")
+end
+
+if not c.internet then
+error("Нету карточки с интернетам") else
+Bar.MidL(WIGHT,17,"&bИнтернет обнаружен.")
+end
+
+Bar.MidR(WIGHT,30,"Для формирования настроек чата,вам нужно ввести ID вашей установки...")
+Bar.MidR(WIGHT,31,"Если вы не знаете что это такое,спросите у InfinityDark любым доступным способом(Discord)")
+Bar.MidR(WIGHT,33,"Введите ваш ID:")
+	term.setCursor(mid-2,34)
 id=io.read()
-print("А сейчас введите НИК игрока,который будет администрировать чат на вашем сервере:")
+Bar.MidR(WIGHT,35,"А сейчас введите НИК игрока,который будет администрировать чат на вашем сервере:")
+	term.setCursor(mid-2,36)
 odmen=io.read()
-print("Вы уверены,что ввели всё правильно?ID: "..id..";Одмен: "..odmen)
-print("Y/N ?")
+Bar.MidR(WIGHT,37,"Вы уверены,что ввели всё правильно?ID: "..id..";Одмен: "..odmen)
+Bar.MidR(WIGHT,38,"Y/N ?")
+	term.setCursor(mid-2,39)
 i=io.read()
 if require("string").lower(i)=="y" then
-print("Создаём таблицу настроек...")
+Bar.MidL(WIGHT,20,"Создаём таблицу настроек...")
 settings={
 updates_enabled=true,
 internetchat_enabled=true,
@@ -78,28 +103,27 @@ message_count=8,
 trigger="ые",
 default_x=1,
 default_y=1,
-default_prefix="Человек"
+default_prefix="Любимчик"
 }
 
-print("Записываем настройки в файл....")
+Bar.MidL(WIGHT,22,"Записываем настройки в файл....")
 file=io.open(require("shell").getWorkingDirectory() .. "/UChatSettings", "w")
 file:write(ser.serialize(settings))
 file:close()
-print("Скачиваем последнюю версию UChat...")
+Bar.MidR("Скачиваем последнюю версию UChat...")
 file=io.open(require("shell").getWorkingDirectory() .. "/UChat.lua","w")
-for chunk in internet.request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat.lua") do if chunk then file:write(chunk) end end
+for chunk in internet.request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/UChat.lua") do if chunk then file:write(chunk) end end
 file:close()
-print("Готово!")
-print("Настраиваем автозапуск...")
+Bar.MidL(WIGHT,23,"Готово!")
+Bar.MidL(WIGHT,24,"Настраиваем автозапуск...")
 file=io.open("/home/.shrc","a")
 file:write("UChat")
 file:close()
 file=io.open(require("shell").getWorkingDirectory() .. "/UChatVersion","w")
 file:write("0")
 file:close()
-print("UChat готов к использованию!")
+Bar.MidR(WIGHT,39,"UChat готов к использованию!")
 require("shell").execute("rm UChatI.lua")
 else
 error("Попробуй ещё раз!")
-end
 end
