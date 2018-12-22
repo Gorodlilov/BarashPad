@@ -15,7 +15,7 @@ local g = component.gpu
 if not fs.exists("/lib/Bar.lua") then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
 end
-local Bar = require("Bar.lua")
+local Bar = require("Bar")
 
 --------------------Настройки--------------------
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
