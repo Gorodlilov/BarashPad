@@ -243,7 +243,7 @@ end
 function getButtons(w,h)
 	if w>=7 and w<= 25 and h>=34 and h<=36 then --Кнопка обновить
 		term.clear()
-		os.execute("UPDBar.lua")
+		shell.execute("UPDBar.lua")
 	elseif w>=7 and w<= 25 and h>=37 and h<=39 then --Кнопка Логин
 		Login()
 	elseif w>=mid-32 and w<= mid-13 and h>=37 and h<=39 then --Кнопка Проги
