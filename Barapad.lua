@@ -19,10 +19,10 @@ local g = component.gpu
 event.shouldInterrupt = function () return false end
 --------------------Настройки--------------------
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
-local COLOR1 = 0x30626b --Рамка
-local COLOR2 = 0x240935 --Цвет кнопок
-local COLOR3 = 0x00382b --Таблица
-local COLOR_SHELL = 0xa73853 --Цвет шелла
+local COLOR1 = 0xff9baa --Рамка
+local COLOR2 = 0xe6a8d7 --Цвет кнопок
+local COLOR3 = 0x6c4675 --Таблица
+local COLOR_SHELL = 0x28071a --Цвет шелла
 
 Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
@@ -76,7 +76,7 @@ function Login()
 		Bar.MidL(WIGHT,24, "&b1. Изменены цвета программы")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "&c2.1")
+		Bar.MidL(WIGHT,40, "&c2.2")
 	
 	-- Конец информации
 	
