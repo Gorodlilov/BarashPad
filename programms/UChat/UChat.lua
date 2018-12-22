@@ -9,17 +9,17 @@
 -----------
 SETTINGS={
 trigger="ые",
-admin="InfinityDark",
+admin="Barawik_",
 default_x=1,
 default_y=1,
-default_prefix="Человек",
+default_prefix="Любимчик",
 default_scale=1,
 message_count=8,
 updates_enabled=true,
 internetchat_enabled=true,
 updateimax=10,
 icimax=5,
-server_id="HTC"
+server_id="BAR"
 }
 -----------
 
@@ -194,7 +194,7 @@ end
 local function update()
 	print("Проверяем наличие обновлений...")
 	version=""
-	for chunk in internet.request("http://superminecraft.000webhostapp.com/UChat/version") do version=version..chunk end
+	for chunk in internet.request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/version") do version=version..chunk end
 	if tonumber(version) then
   if fs.exists(shell.getWorkingDirectory() .. "/UChatVersion") then
 		file = io.open(shell.getWorkingDirectory() .. "/UChatVersion", "r") 
@@ -211,7 +211,7 @@ local function update()
 			os.sleep(5)
 			print("Начинаем загрузку!НЕ ВЫКЛЮЧАТЬ КОМП!")
 			file=io.open(shell.getWorkingDirectory() .. "/UChat.lua","w")
-			for chunk in internet.request("http://superminecraft.000webhostapp.com/UChat/UChat.lua") do if chunk then file:write(chunk) end end
+			for chunk in internet.request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/UChat.lua") do if chunk then file:write(chunk) end end
 			file:close()
 			file=io.open(shell.getWorkingDirectory() .. "/UChatVersion", "w")
 			file:write(version)
@@ -357,7 +357,7 @@ end
 
 local function internetChatUpdate()
 answer=""
-for chunk in require("internet").request("http://superminecraft.000webhostapp.com/UChat/chatread.php?id="..SETTINGS.server_id) do
+for chunk in require("internet").request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/chatread.php?id="..SETTINGS.server_id) do
   if tostring(chunk) then
 	chunk=str.gsub(chunk,"_"," ")
     answer=answer..chunk
@@ -370,7 +370,7 @@ end
 local function internetChatSend(msg)
 if msg then
   msg=str.gsub(msg," ","_")
-  require("internet").request("http://superminecraft.000webhostapp.com/UChat/chatsend.php?id="..SETTINGS.server_id.."&msg=".."["..real_time().."]"..msg)
+  require("internet").request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/chatsend.php?id="..SETTINGS.server_id.."&msg=".."["..real_time().."]"..msg)
 end
 end
 
@@ -869,8 +869,8 @@ updatei=1
 ici=1
 
 if SETTINGS.internetchat_enabled then
-  internet.request("http://superminecraft.000webhostapp.com/UChat/chatread.php?id="..SETTINGS.server_id)
-  internet.request("http://superminecraft.000webhostapp.com/UChat/chatsend.php?id="..SETTINGS.server_id.."&msg=UChat_с_ID_"..SETTINGS.server_id.."_начал_свою_работу!")
+  internet.request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/chatread.php?id="..SETTINGS.server_id)
+  internet.request("https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/UChat/chatsend.php?id="..SETTINGS.server_id.."&msg=UChat_с_ID_"..SETTINGS.server_id.."_начал_свою_работу!")
 end
 
 
