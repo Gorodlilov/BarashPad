@@ -11,11 +11,11 @@ local event=require("event")
 local component=require("component")
 local colors = require("colors")
 local g = component.gpu
-local Bar = require("Bar")
 
 if not fs.exists("/lib/Bar.lua") then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
 end
+local Bar = require("Bar.lua")
 
 --------------------Настройки--------------------
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
@@ -23,12 +23,13 @@ local COLOR1 = 0x30626b --Рамка
 local COLOR2 = 0x240935 --Цвет кнопок
 local COLOR3 = 0x00382b --Таблица
 local COLOR_SHELL = 0xa73853 --Цвет шелла
+local mid = (WIGHT-32)/2+32 -- Центральное слово
 -------------------------------------------------
 
 WIGHT, HEIGHT = Bar.Resolution(WIGHT, HEIGHT)
 Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
-
-		Bar.Word(mid - 24,7, "UPDBar", 0x000000)
+		g.setForeground(COLOR1)
+		Bar.Word(mid - 24,7, "UPDBAR", 0x000000)
 
 		Bar.Mid(WIGHT,26,"Прочитка старых файлов...")
 		if fs.exists("Barapad.lua") then
