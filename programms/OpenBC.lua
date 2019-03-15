@@ -89,14 +89,14 @@ function ioLoad()
 end
 ioLoad()
 local buttons = {}
-chat.setName("§4Bs§7]")
+chat.setName("§a§lBP§7")
 local name2
 --local name2 = "§8[§bBarapad§8]§f : "
 
 function loadName2()
 	local f,err = io.open("/home/_name2","r")
 	if err then
-		local name2 = "§8[§bBarapad§8]§a Бараш§f: "
+		local name2 = "§8[§bBarapad§8]§a Любовник§f: "
 		ff,errr = io.open("/home/_name2","w")
 		if errr then
 			error("kappa5")
@@ -187,12 +187,12 @@ local helpStrings = {
 }
 c.helpHeight = #helpStrings
 function say(msg)
-	component.chat_box.say("§bbroadcaster§7: " .. tostring(msg),20)
+	component.chat_box.say("§8[§bBarapad§8]§a Любовник§f: : " .. tostring(msg),20)
 end
 function listen(msg)
 	if msg ~= "" then
 		msg = msg:gsub("&","§")
-		component.chat_box.say("[local] " .. name2 .. tostring(msg),20)
+		component.chat_box.say("§8[§bBarapad§8]§a Любовник§f: " .. name2 .. tostring(msg),20)
 	end
 end
 function broadcast(msg)
