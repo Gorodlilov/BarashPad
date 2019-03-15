@@ -192,7 +192,7 @@ end
 function listen(msg)
 	if msg ~= "" then
 		msg = msg:gsub("&","§")
-		component.chat_box.say("§8[§bBarapad§8]§a Любовник§f: " .. name2 .. tostring(msg),20)
+		component.chat_box.say("§8[§bBarapad§8]§a" .. name2 .. "§f " .. (msg),20)
 	end
 end
 function broadcast(msg)
