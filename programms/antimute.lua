@@ -32,6 +32,7 @@ for k,v in pairs(plrs) do
 if v==nick then 
 return true
 end
+		end
 while true do
 evt,_,plr,msg=event.pull("chat_message")
 if msg=="-start" then	
