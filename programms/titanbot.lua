@@ -66,14 +66,14 @@ function func()
  cb.say(BOT_NAME..COLOR8.."§c/warp magaz§7 - тот варп, который является первым ТРЦ сервера. Спасибо что вы остаетесь со мной. ")
 end
  
-local t = event.timer(10,func,math.huge)
+local t = event.timer(300,func,math.huge)
 
 function reclama( )
     cb.say(BOT_NAME..COLOR5.."§c>| §bПроплаченная реклама §c|<")
     cb.say(BOT_NAME..COLOR8.."§d^_^ §6/warp magaz§7 - трц, ценится огромезной и продуманностью продажи товаров по минимальным ценам. §fВозможность совершения заказов, есть стрельба на 2 этаже. Прочувствуйте всю любовь барашков §d❤:3")
 end
 
-local t = event.timer(50, reclama, math.huge)
+local t = event.timer(700, reclama, math.huge)
 
 function a(msg)
                     if string.find(msg, "привет" ) ~= nil then
@@ -293,7 +293,7 @@ function bb(msg)
 end
 
 function cc(msg)
-                    if string.find(msg, "нихуя" ) ~= nil then
+                    if string.find(msg, "/нихуя" ) ~= nil then
                     cb.say(BOT_NAME .. COLOR5   ..  MASS5[math.random(1, #MASS5)])
                     return true
                 end
@@ -426,10 +426,10 @@ function user_say(msg, nick)
     if string.find(msg, "-обновление") ~= nil and  (nick == "Barawik_" or nick == "TuskT")  then
       cb.say(BOT_NAME .. COLOR1 .. "Получение обновлений...")
     cb.say(BOT_NAME .. COLOR5 .. "Обновление.")
-        os.execute("wget -f https://pastebin.com/raw/MXZ3sRs1 sasha.lua")
+        os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/titanbot.lua1 AlexBot.lua")
     cb.say(BOT_NAME .. COLOR6 .. "Перезагрузка систем.")
         os.sleep(3)
-        os.execute("sasha")
+        os.execute("AlexBot")
         os.exit()
     end
    if string.find(msg, "-обновление") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT") then
