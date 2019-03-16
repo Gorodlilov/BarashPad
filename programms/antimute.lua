@@ -30,6 +30,7 @@ cb.say("§aЗапущено!")
 local function check(nick)
 for k,v in pairs(plrs) do
 if v==nick then 
+print("\nPrivuet")
 return true
 end
 		
