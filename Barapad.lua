@@ -27,7 +27,7 @@ local COLOR_SHELL = 0x28071a --Цвет шелла
 Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["InfinityDark"] = "2277"
-Bar.ps["alexowe"] = "2288"
+Bar.ps["TuskT"] = "12345"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
@@ -74,9 +74,10 @@ function Login()
 		Bar.MidL(WIGHT,19, "&fhttps://discord.gg/vQNqtan")
 		Bar.MidL(WIGHT,23, "&fИзменения:")
 		Bar.MidL(WIGHT,24, "&b1. Изменены цвета программы")
+		Bar.MidL(WIGHT,25, "&b2. TuskT имеет доступ")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "&c2.2")
+		Bar.MidL(WIGHT,40, "&c2.3")
 	
 	-- Конец информации
 	
@@ -126,8 +127,8 @@ end
 function TechPanel()
 	prog = false
 	g.fill(mid - 43, 13, 83, 23, " ")
-	Bar.MidR(WIGHT, 20, "&bПриветик, я Барашка, принимаю все")
-	Bar.MidR(WIGHT, 21, "&bпожелания: почта - vkd2005@mail.ru")
+	Bar.MidR(WIGHT, 20, "&dПриветик, я Барашка, принимаю все")
+	Bar.MidR(WIGHT, 21, "&dпожелания: почта - vkd2005@mail.ru")
 	tech = true
 end
 
