@@ -33,7 +33,8 @@ if v==nick then
 print("\nPrivuet")
 return true
 end
-		end
+end
+	end
 		
 while true do
 evt,_,plr,msg=event.pull("chat_message")
