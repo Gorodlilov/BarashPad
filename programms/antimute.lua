@@ -3,7 +3,7 @@
 --| Проект MCSkill.ru TMSB |
 --|  Author: InfinityDark  |
 --|  Developer: Barawik_   |
---| Version 2,0 LuaLanguag |
+--|  Version 2.0 Lua Lang) |
 --|========================|
 
 -- | Планируется графический интерфейс.
@@ -45,7 +45,6 @@ if msg=="-stop" then
 rem(plr)
 cb.say("§8[§c-§8] §f".. plr)
 end
-	end
 end
 
 
