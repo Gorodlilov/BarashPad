@@ -22,7 +22,7 @@ local COLOR7 = "§e"
 local COLOR8 = "§7"
 local COLOR_CMD = 0x00ff00 --Цвет консоли
 local dad = "Barawik_"
-local dad2 = {"heridium"}
+local dad2 = {"TuskT"}
 local MASS1 = {"Привет", "Привки", "Добрый день", "Здравствуй", "Приветик"}
 local MASS2 = {"Прекрасно", "Отлично", "Шикарно", "Замечательно","Топово"}
 local MASS3 = {"Скоро)", "Как только так сразу)", "На днях)", "Завтра)", "В ближайшее время)"}
@@ -38,7 +38,7 @@ local WORDS = {", солнце", ", зайка", ", пупсик", ", котик
 local glob, loc = {"Это тип функции"}, {"Чат"}
 g.setResolution(100, 33)
 term.clear()
-  cb.setName("GGWP")
+  cb.setName("BP")
   component.chat_box.setDistance(100)
   component.chat_box.getDistance(100)
 
@@ -317,7 +317,9 @@ function online(msg)
   if string.find(msg, "администрация") ~= nil then
 	 cb.say(BOT_NAME .. COLOR5   ..  "Администрация варпа:")
 	cb.say(BOT_NAME .. COLOR5   ..  "&aBarawik_")
-	cb.say(BOT_NAME .. COLOR5   ..  "&falexowe")
+	cb.say(BOT_NAME .. COLOR5   ..  "&fTuskT")
+	end
+end
 
 ----
  
@@ -406,22 +408,22 @@ function user_say(msg, nick)
          cb.say(BOT_NAME .. COLOR1 .. unicode.sub(msg,2, unicode.len(msg)))
     end
   end
-        if string.find(msg, "-рестарт") ~= nil and (nick == "Barawik_" or nick == "heridium") then
+        if string.find(msg, "-рестарт") ~= nil and (nick == "Barawik_" or nick == "TuskT") then
     cb.say(BOT_NAME .. COLOR6 .. "Перезагрузка систем.")
                 dofile("/bin/reboot.lua")
                 os.execute("sasha")
     end
-        if string.find(msg, "-Выключить") ~= nil and  (nick == "Barawik_" or nick == "heridium") then
+        if string.find(msg, "-Выключить") ~= nil and  (nick == "Barawik_" or nick == "TuskT") then
          cb.say(BOT_NAME .. COLOR1 .. "Shutdown this pc")
               computer.shutdown()
     end
-        if string.find(msg, "-рестарт") ~= nil and  (nick ~= "Barawik_" or nick ~= "heridium")  then
+        if string.find(msg, "-рестарт") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT")  then
         cb.say(BOT_NAME .. COLOR1 .. "Иди, отказ, " ..COLOR3 .. nick)
     end
-        if string.find(msg, "-Выключить") ~= nil and  (nick ~= "Barawik_" or nick ~= "heridium")  then
+        if string.find(msg, "-Выключить") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT")  then
          cb.say(BOT_NAME .. COLOR1 .. "ПШЕЛ ОТСЮДА КУДА ПОДАЛЬШЕ, "..COLOR3.. nick)
     end
-    if string.find(msg, "-обновление") ~= nil and  (nick == "Barawik_" or nick == "heridium")  then
+    if string.find(msg, "-обновление") ~= nil and  (nick == "Barawik_" or nick == "TuskT")  then
       cb.say(BOT_NAME .. COLOR1 .. "Получение обновлений...")
     cb.say(BOT_NAME .. COLOR5 .. "Обновление.")
         os.execute("wget -f https://pastebin.com/raw/MXZ3sRs1 sasha.lua")
@@ -430,18 +432,18 @@ function user_say(msg, nick)
         os.execute("sasha")
         os.exit()
     end
-   if string.find(msg, "-обновление") ~= nil and  (nick ~= "Barawik_" or nick ~= "heridium") then
+   if string.find(msg, "-обновление") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT") then
        cb.say(BOT_NAME .. COLOR1 .. "Атань" .."§6"..nick.."§b. Ты не достоин этого!")
     end
-    if string.find(msg, "-love") ~= nil and (nick == "Barawik_" or nick == "heridium") then
+    if string.find(msg, "-love") ~= nil and (nick == "Barawik_" or nick == "TuskT") then
       cb.say(BOT_NAME .. "§4❤")
     end
-    if string.find(msg, "-debug") ~= nil and (nick == "Barawik_" or nick == "heridium") then
+    if string.find(msg, "-debug") ~= nil and (nick == "Barawik_" or nick == "TuskT") then
        cb.say(BOT_NAME .. COLOR1 .. "Выполняю . . .")
         computer.addUser("dad")
          computer.addUser("dad2")
     end
-      if string.find(msg, "-кто я тебе?" ) ~= nil and (nick == "Barawik_" or nick == "heridium") then
+      if string.find(msg, "-кто я тебе?" ) ~= nil and (nick == "Barawik_" or nick == "TuskT") then
              cb.say(BOT_NAME .."§dВы мой любимый❤")
     end
    if string.find(msg, "-извинись") ~= nil and  (nick == "Barawik_") then
@@ -450,17 +452,17 @@ function user_say(msg, nick)
    if string.find(msg, "-извинись") ~= nil and  (nick ~= "Barawik_") then
        cb.say(BOT_NAME .. COLOR1 .. "Пускай это напишет Barawik_" .."§6Тогда я извинюсь!")
   end
-     if string.find(msg, "-админские") ~= nil and  (nick == "Barawik_" or nick == "heridium") then
+     if string.find(msg, "-админские") ~= nil and  (nick == "Barawik_" or nick == "TuskT") then
        cb.say(BOT_NAME .. COLOR6 .. "планы-планы-планы")
     end
-     if string.find(msg, "-configs") ~= nil and  (nick == "Barawik_" or nick == "heridium") then
+     if string.find(msg, "-configs") ~= nil and  (nick == "Barawik_" or nick == "TuskT") then
        cb.say(BOT_NAME .. COLOR4 .."§cBotTraveler (Magazz)")
      cb.say(BOT_NAME .. COLOR6 .. "Версия прошивки:" .." §4M0aCgLaUzAz556")
      cb.say(BOT_NAME .. COLOR6 .. "Голосовой помощник:" .." §bОтсутствует")
      cb.say(BOT_NAME .. COLOR6 .. "Версия ПО:" .." §c0.1")
      cb.say(BOT_NAME .. COLOR6 .. "Разработка:" .."Barawik_")
   end
-  if string.find(msg, "-configs") ~= nil and  (nick ~= "Barawik_" or nick ~= "heridium") then
+  if string.find(msg, "-configs") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT") then
        cb.say(BOT_NAME .. COLOR5 .. "Для использования команды вы должны быть вышестоящим лицом")
   end
 end
