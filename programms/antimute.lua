@@ -46,7 +46,7 @@ if msg=="-stop" then
 rem(plr)
 cb.say("§8[§c-§8] §f".. plr)
 end
-	
+	end
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
