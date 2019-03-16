@@ -32,7 +32,6 @@ for k,v in pairs(plrs) do
 if v==nick then 
 return true
 end
-		end
 while true do
 evt,_,plr,msg=event.pull("chat_message")
 if msg=="-start" then	
@@ -41,12 +40,13 @@ cb.say("§8[§a+§8] §f" ..plr)
 return false
 end
 end
+		end
 			
 if msg=="-stop" then
 rem(plr)
 cb.say("§8[§c-§8] §f".. plr)
 end
-	end
+end
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
