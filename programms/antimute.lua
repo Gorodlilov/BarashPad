@@ -18,8 +18,8 @@ cb.setDistance(100)
 local term=require("term")
 local g=component.gpu
 local colors = require("colors")
-cb.setname("§a§lBP§7]")
-local BOTNAME = "§3§lAntimute Sys >>"
+cb.setnName("§a§lBP§7]")
+local BOTNAME = "§3§lAntimute System >>"
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
