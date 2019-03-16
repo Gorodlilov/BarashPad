@@ -38,7 +38,6 @@ if msg=="-start" then
 plrs[#plrs+1]=plr
 cb.say("§8[§a+§8] §f" ..plr)
 end
-	end
 end
 return false
 if msg=="-stop" then
