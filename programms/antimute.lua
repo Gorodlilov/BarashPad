@@ -64,6 +64,15 @@ os.sleep(1)
 os.execute("reboot")
 end
 	
+if msg=="-help" then
+cb.say(BOTNAME.."§c§lCписок доступных команд:")
+cb.say(BOTNAME.."§a§o-start §fприсоединиться к антимуту")
+cb.say(BOTNAME.."§a§o-stop §fвыйти с антимута")
+cb.say(BOTNAME.."§a§o-closeapp §fвыключает программу")
+cb.say(BOTNAME.."§a§0-updateapp §fобновляет программу до последней версии")
+end
+		
+	
 if msg=="-updateapp" then
 cb.say(BOTNAME.."Начинаю обновление программы.")
 os.sleep(1)
