@@ -28,6 +28,7 @@ Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["InfinityDark"] = "2277"
 Bar.ps["TuskT"] = "12345"
+Bar.ps["Noley0515"] = "123579"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
