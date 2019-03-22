@@ -69,12 +69,12 @@ os.sleep(1)
 os.execute("reboot")
 end
 	
-if msg=="-help" then
+if string.find(msg, "-help") ~= nil and  (plr==#plrs) then
 cb.say(BOTNAME.."§c§lCписок доступных команд:")
 cb.say(BOTNAME.."§a§o-start §fприсоединиться к антимуту")
 cb.say(BOTNAME.."§a§o-stop §fвыйти с антимута")
 cb.say(BOTNAME.."§a§o-closeapp §fвыключает программу")
-cb.say(BOTNAME.."§a§0-updateapp §fобновляет программу")
+cb.say(BOTNAME.."§a§o-updateapp §fобновляет программу")
 end
 		
 	
