@@ -58,11 +58,6 @@ rem(plr)
 cb.say(BOTNAME.."§8[§c-§8] §f".. plr)
 end
 
-if plr == [#plrs+plr]
-if msg=="-start" then
-end
-end
-
 if msg=="-closeapp" then
 print("\nЗакрытие программы..")
 os.sleep(1)
