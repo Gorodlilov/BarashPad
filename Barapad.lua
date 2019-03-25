@@ -41,7 +41,7 @@ end
 if not (fs.exists("/autorun.lua")) then
 	print("\nНастройка автозапуска...")
 	file = io.open("/autorun.lua", "w")
-	file:write("local shell = require('shell')\nlocal term = require('term')\nos.sleep(0.5)\nterm.clear()\nlocal dir = '" .. shell.getWorkingDirectory() .. "'\nif dir ~= '/' then shell.setWorkingDirectory(dir) end\nshell.execute('BaraPad')")
+	file:write("local shell = require('shell')\nlocal term = require('term')\nos.sleep(0.5)\nterm.clear()\nlocal dir = '" .. shell.getWorkingDirectory() .. "'\nif dir ~= '/' then shell.setWorkingDirectory(dir) end\nshell.execute('Barapad')")
 	file:close()
 	os.sleep(1)
 end
