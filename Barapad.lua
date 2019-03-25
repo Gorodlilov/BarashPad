@@ -38,6 +38,18 @@ if not (fs.exists(shell.getWorkingDirectory() .. "/UPDBar.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
 end
 
+if not (fs.exists("/autorun.lua")) then
+	print("\nНастройка автозапуска...")
+	file = io.open("/autorun.lua", "w")
+	file:write("local shell = require('shell')\nlocal term = require('term')\nos.sleep(0.5)\nterm.clear()\nlocal dir = '" .. shell.getWorkingDirectory() .. "'\nif dir ~= '/' then shell.setWorkingDirectory(dir) end\nshell.execute('BaraPad')")
+	file:close()
+	os.sleep(1)
+end
+print("\nИнициализация...")
+os.sleep(2)
+print("Запуск программы...")
+os.sleep(2)
+
 local mid = (WIGHT-32)/2+32
 local login, prog, tech = false, false, false
 local sel = 0
@@ -76,6 +88,7 @@ function Login()
 		Bar.MidL(WIGHT,23, "&fИзменения:")
 		Bar.MidL(WIGHT,24, "&b1. Изменены цвета программы")
 		Bar.MidL(WIGHT,25, "&b2. TuskT имеет доступ")
+		Bar.MidL(WIGHT,25, "&e3. Добавлен авторан")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,40, "&c2.3")
