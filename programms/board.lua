@@ -5,9 +5,6 @@ local e = require('event')
 local shell = require('shell')
 local g = c.gpu
 local color = g.setForeground
-local cb = c.chat_box
-local glob, loc = {"Это тип функции"}, {"Чат"}
-local BOT_NAME = " §8Оликсандр §f>> " --Преффикс и имя бота
  
 local w,h = 72,11 -- разрешение экрана
 local outer = 1 -- отступ от строк
@@ -73,70 +70,6 @@ g.setResolution(w,h)
 for i = 1, #frases do
     local frase = frases[i]
     printFormatText(getX(frase),outer*i,frase)
-end
-
-
-function func()
- cb.say(BOT_NAME..COLOR8.."§c/warp magaz§7 - тот варп, который является первым ТРЦ сервера. Спасибо что вы остаетесь со мной. ")
-end
- 
-local tim = e.timer(1,func,math.huge)
-
-function reclama( )
-    cb.say(BOT_NAME..COLOR5.."§c>| §bПроплаченная реклама §c|<")
-    cb.say(BOT_NAME..COLOR8.."§d^_^ §6/warp magaz§7 - трц, ценится огромезной и продуманностью продажи товаров по минимальным ценам. §fВозможность совершения заказов, есть стрельба на 2 этаже. Прочувствуйте всю любовь барашков §d❤:3")
-end
-
-local tim = e.timer(5, reclama, math.huge) 
-
-function message(msg, nick)
-    msg2 = msg
-    msg = unicode.lower(msg)
-        local info= info(msg)
-        local creat = creat(msg)
-        local online = online(msg)
-        local a = a(msg)
-        local b = b(msg)
-        local c = c(msg)
-        local d = d(msg)
-        local e = e(msg)
-        local f = f(msg)
-        local g = g(msg)
-        local h = h(msg)
-        local i = i(msg)
-        local k = k(msg)
-        local l = l(msg)
-        local m = m(msg)
-        local n = n(msg)
-        local o = o(msg)
-        local p = p(msg)
-        local q = q(msg)
-        local r = r(msg)
-        local s = s(msg)
-        local tim = tim(msg)
-        local u = u(msg)
-        local v = v(msg)
-        local j = j(msg)
-        local x = x(msg)
-        local y = y(msg)
-        local z = z(msg)
-        local aa = aa(msg)
-        local qq = qq(msg)
-        local bb = bb(msg)
-        local cc = cc(msg)
-    if (lon) or (loff) or (info)  or (creat) or (a) or (b) or (c) or (d) or (e) or (f) or (g) or (h) or (i) or (k) or (l) or (m) or (n) or (o) or (p) or (q) or (r) 
-            or (s) or (tim) or (u) or (v) or (w) or (j) or (x) or (y) or (z) or (radio) or (aa) or (online) or (qq) or (bb) or (cc) then
-            if #glob == 38 then
-                table.remove(glob, 1)
-            end
-            table.insert(glob, nick .. ":" .. msg2)
-      else
-        local user_say = user_say(msg2, nick)
-               if #loc == 38 then
-                table.remove(loc, 1)
-            end
-            table.insert(loc, nick .. ":" .. msg2)
-    end
 end
 
 t.clear()
