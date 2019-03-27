@@ -5,7 +5,7 @@ local e = require('event')
 local shell = require('shell')
 local g = c.gpu
 local color = g.setForeground
-local cb = component.chat_box
+local cb = c.chat_box
 local BOT_NAME = " §8Оликсандр §f>> " --Преффикс и имя бота
  
 local w,h = 72,11 -- разрешение экрана
