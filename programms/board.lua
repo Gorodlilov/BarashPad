@@ -63,13 +63,24 @@ function getX(frase)
     local x = w/2 - len/2
     return math.floor(x)
 end
-
+ 
 t.clear()
 g.setResolution(w,h)
-
+ 
 for i = 1, #frases do
     local frase = frases[i]
     printFormatText(getX(frase),outer*i,frase)
 end
-
+ 
+color(0xFFFFFF)
+g.set(1,18,'                                                      Release v.2.1    ')
+color(0xFFFFFF)
+ 
+while true do
+    local _,_,_,curY = e.pull('touch')
+    if curY == 18 then
+        os.sleep(1)
+    end
+  end
+ 
 t.clear()
