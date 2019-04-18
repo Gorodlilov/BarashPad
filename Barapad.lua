@@ -34,15 +34,9 @@ if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
 end
 
-shell.execute(shell.getWorkingDirectory() .. "rm UPDBar.lua")
-shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
-
 if not (fs.exists("/autorun.lua")) then
 	print("\nНастройка автозапуска...")
-	file = io.open("/autorun.lua", "w")
-	file:write("local shell = require('shell')\nlocal term = require('term')\nos.sleep(0.5)\nterm.clear()\nlocal dir = '" .. shell.getWorkingDirectory() .. "'\nif dir ~= '/' then shell.setWorkingDirectory(dir) end\nshell.execute('Barapad')")
-	file:close()
-	os.sleep(1)
+	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/autorun.lua /autorun.lua")
 end
 print("\nИнициализация...")
 os.sleep(2)
