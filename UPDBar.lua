@@ -32,13 +32,13 @@ Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
 		Bar.Word(mid - 24,7, "UPDBAR", 0x000000)
 
 		Bar.Mid(WIGHT,26,"Прочитка старых файлов...")
-		if fs.exists(shell.getWorkingDirectory() .. "Barapad.lua") then
+		if fs.exists("Barapad.lua") then
 		Bar.Mid(WIGHT,27,"Barapad обнаружен!")
 		else
 		Bar.Mid(WIGHT,27,"Barapad не обнаружен!")
 		end
 		os.sleep(2)
-		if fs.exists(shell.getWorkingDirectory() .. "Programms.lua") then
+		if fs.exists("Programms.lua") then
 		Bar.Mid(WIGHT,28,"Список программ обнаружен!")
 		else
 		Bar.Mid(WIGHT,28,"Список программ не обнаружен!")
@@ -46,9 +46,9 @@ Bar.Ram("Обновляльщик", COLOR1,COLOR2,WIGHT, HEIGHT)
 		os.sleep(2)
 		Bar.Mid(WIGHT,30,"Начинаю удалять старые файлы.")
 		os.sleep(1)
-		shell.execute(shell.getWorkingDirectory() .. "rm Barapad.lua")
-		shell.execute(shell.getWorkingDirectory() .. "rm Programms.lua")
-		shell.execute(shell.getWorkingDirectory() .. "rm /lib/Bar.lua")
+		shell.execute("rm Barapad.lua")
+		shell.execute("rm Programms.lua")
+		shell.execute("rm /lib/Bar.lua")
 		Bar.Mid(WIGHT,31,"Старые файлы все удадалены!")
 		os.sleep(2)
 		Bar.Mid(WIGHT,33,"Начинаю закачку новых файлов.")
