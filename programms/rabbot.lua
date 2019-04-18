@@ -316,8 +316,8 @@ end
 function online(msg)
   if string.find(msg, "администрация") ~= nil then
 	 cb.say(BOT_NAME .. COLOR5   ..  "Администрация варпа:")
-	cb.say(BOT_NAME .. COLOR5   ..  "&aBarawik_")
-	cb.say(BOT_NAME .. COLOR5   ..  "&fTuskT")
+	cb.say(BOT_NAME .. COLOR5   ..  "Barawik_")
+	cb.say(BOT_NAME .. COLOR5   ..  "TuskT")
 	end
 end
 
@@ -338,14 +338,18 @@ end
     cb.say(BOT_NAME..COLOR2.."Чтобы пройти к бесплатной булыге, нужно")
 	cb.say(BOT_NAME..COLOR2.."Пройти за информационный компьютер, и")
 	cb.say(BOT_NAME..COLOR2.."подняться по лестнице :3")
-  end
+    return true
+    end
+    return false
 end
  function wand(msg)
   if string.find(msg,"-FREECOBLA") ~= nil then
     cb.say(BOT_NAME..COLOR2.."Чтобы пройти к зарядке жезлов, нужно")
 	cb.say(BOT_NAME..COLOR2.."С лицевой стороны информационного компа")
 	cb.say(BOT_NAME..COLOR2.."повернуть налево, и пройти вперед :3")
-  end
+    return true
+    end
+    return false
 end
 
 function creat(msg)
