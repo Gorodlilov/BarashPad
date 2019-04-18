@@ -27,7 +27,7 @@ local MASS1 = {"Привет", "Привки", "Добрый день", "Здр�
 local MASS2 = {"Прекрасно", "Отлично", "Шикарно", "Замечательно","Топово"}
 local MASS3 = {"Скоро)", "Как только так сразу)", "На днях)", "Завтра)", "В ближайшее время)"}
 local MASS4 = {"Рада за тебя:)", "Это же хорошо:)", "Мне очень приятно:)", "Приятно слышать:)"}
-local MASS5 = {"Не отчаивайся, зай:*", "Все будет хорошо, малыш:*"}
+local MASS5 = {"Не отчаивайся, зай :*", "Все будет хорошо, малыш :*", "Не плачь, солнышко :c"}
 local MASS6 = {"Я всегда здесь", "Естественно, я здесь", "Присутствую", "А где же мне быть еще?"}
 local MASS7 = {"Не прилично задавать такие вопросы, §cхоть я и бот"}
 local MASS8 = {"Я плохо шучу(", "Быстрее всего летит время в отпуске, на проститутке и от рождения до смерти", "Колобок не может выбрать себе невесту, столько круглых дур, глаза разбегаются",
@@ -63,14 +63,14 @@ local colorsTable = {
 
 
 function func()
- cb.say(BOT_NAME..COLOR8.."§c/warp magaz§7 - тот варп, который является первым ТРЦ сервера. Спасибо что вы остаетесь со мной. ")
+ cb.say(BOT_NAME..COLOR8.."§c/warp Rabbits§7 - тот варп, где низкие цены на сервере. Спасибо что вы остаетесь со мной. ")
 end
  
 local t = event.timer(300,func,math.huge)
 
 function reclama( )
-    cb.say(BOT_NAME..COLOR5.."§c>| §bПроплаченная реклама §c|<")
-    cb.say(BOT_NAME..COLOR8.."§d^_^ §6/warp magaz§7 - трц, ценится огромезной и продуманностью продажи товаров по минимальным ценам. §fВозможность совершения заказов, есть стрельба на 2 этаже. Прочувствуйте всю любовь барашков §d❤:3")
+    cb.say(BOT_NAME..COLOR5.."§c>| §bИнтересный факт §c|<")
+    cb.say(BOT_NAME..COLOR8.."§d^_^ У нас есть зарядочка жезлов, бесплатная булыга §d❤:3")
 end
 
 local t = event.timer(700, reclama, math.huge)
@@ -306,9 +306,9 @@ function qq(msg)
 
 if string.find(msg, "-trz") ~= nil then
 component.chat_box.say(BOT_NAME..COLOR7.."Здравствуйте, я Сашенька, §eпутеводный §eпомощник:)")
-component.chat_box.say(BOT_NAME..COLOR7.."Я и с §cвледельцами ТРЦ§e всегда рады видеть вас на §c/warp magaz")
+component.chat_box.say(BOT_NAME..COLOR7.."Я и с §cвледельцами ТРЦ§e всегда рады видеть вас на §c/warp Rabbits")
 component.chat_box.say(BOT_NAME..COLOR7.."Для взаимодействия со мной §eпрописывайте команды.")
-component.chat_box.say(BOT_NAME..COLOR7.."Приятного времяпровождения§e,§eи удачных §eпокупок!")
+component.chat_box.say(BOT_NAME..COLOR7.."Приятного времени провождения§e,§eи удачных §eпокупок!")
   end
 end
 
@@ -325,16 +325,28 @@ end
  
 function info(msg)
     if string.find(msg,"-инфо") ~= nil then
-    cb.say(BOT_NAME..COLOR5.."Информация по боту")
-    cb.say(BOT_NAME..COLOR6.."Мой функционал:")
-    cb.say(BOT_NAME..COLOR6.."➢ -trz(Приветствие)")
-    cb.say(BOT_NAME..COLOR6.."➢ -владельцы?")
+    cb.say(BOT_NAME..COLOR5.."Эксурсовод:")
+    cb.say(BOT_NAME..COLOR5.."1. §dЕсли вы хотите пройти к бесплатному булыжнику, введите §3§l-FREECOBLA")
+    cb.say(BOT_NAME..COLOR5.."2. §dЕсли вы хотите пройти к зарядке жезлов, введите §3§l-CHARGEWAND")
     return true
     end
     return false
 end
  
- 
+ function cobla(msg)
+  if string.find(msg,"-FREECOBLA") ~= nil then
+    cb.say(BOT_NAME..COLOR2.."Чтобы пройти к бесплатной булыге, нужно")
+	cb.say(BOT_NAME..COLOR2.."Пройти за информационный компьютер, и")
+	cb.say(BOT_NAME..COLOR2.."подняться по лестнице :3")
+  end
+end
+ function wand(msg)
+  if string.find(msg,"-FREECOBLA") ~= nil then
+    cb.say(BOT_NAME..COLOR2.."Чтобы пройти к зарядке жезлов, нужно")
+	cb.say(BOT_NAME..COLOR2.."С лицевой стороны информационного компа")
+	cb.say(BOT_NAME..COLOR2.."повернуть налево, и пройти вперед :3")
+  end
+end
 
 function creat(msg)
   if string.find(msg,"-владельцы?") ~= nil then
@@ -344,7 +356,7 @@ end
 
 function draw()
       g.setForeground(COLOR_CMD)
-      g.set(1,1,"╔═════════════════════════════════BotTraveler══════════════════/warp Maga══════════════════════════╗")
+      g.set(1,1,"╔═════════════════════════════════BotTraveler══════════════════/warp Rabb══════════════════════════╗")
       g.set(1,33,"╚═════════════════════════════════════════════════════════════════release 1.0═════Barawik_═════════╝")
       g.fill(1,2,1,31,"║")
       g.fill(100,2,1,31,"║")
@@ -358,6 +370,8 @@ function message(msg, nick)
         local info= info(msg)
         local creat = creat(msg)
         local online = online(msg)
+		local cobla = cobla(msg)
+		local wand = wand(msg)
         local a = a(msg)
         local b = b(msg)
         local c = c(msg)
@@ -411,29 +425,20 @@ function user_say(msg, nick)
         if string.find(msg, "-рестарт") ~= nil and (nick == "Barawik_" or nick == "TuskT") then
     cb.say(BOT_NAME .. COLOR6 .. "Перезагрузка систем.")
                 dofile("/bin/reboot.lua")
-                os.execute("sasha")
+                os.execute("RabbitBot")
     end
         if string.find(msg, "-Выключить") ~= nil and  (nick == "Barawik_" or nick == "TuskT") then
          cb.say(BOT_NAME .. COLOR1 .. "Shutdown this pc")
               computer.shutdown()
     end
-        if string.find(msg, "-рестарт") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT")  then
-        cb.say(BOT_NAME .. COLOR1 .. "Иди, отказ, " ..COLOR3 .. nick)
-    end
-        if string.find(msg, "-Выключить") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT")  then
-         cb.say(BOT_NAME .. COLOR1 .. "ПШЕЛ ОТСЮДА КУДА ПОДАЛЬШЕ, "..COLOR3.. nick)
-    end
     if string.find(msg, "-обновление") ~= nil and  (nick == "Barawik_" or nick == "TuskT")  then
       cb.say(BOT_NAME .. COLOR1 .. "Получение обновлений...")
     cb.say(BOT_NAME .. COLOR5 .. "Обновление.")
-        os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/titanbot.lua1 AlexBot.lua")
+        os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/rabbot.lua RabbitBot.lua")
     cb.say(BOT_NAME .. COLOR6 .. "Перезагрузка систем.")
         os.sleep(3)
-        os.execute("AlexBot")
+        os.execute("reboot")
         os.exit()
-    end
-   if string.find(msg, "-обновление") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT") then
-       cb.say(BOT_NAME .. COLOR1 .. "Атань" .."§6"..nick.."§b. Ты не достоин этого!")
     end
     if string.find(msg, "-love") ~= nil and (nick == "Barawik_" or nick == "TuskT") then
       cb.say(BOT_NAME .. "§4❤")
@@ -449,25 +454,18 @@ function user_say(msg, nick)
    if string.find(msg, "-извинись") ~= nil and  (nick == "Barawik_") then
        cb.say(BOT_NAME .. COLOR1 .. "Простите меня(" .."§6Я была не права")
     end
-   if string.find(msg, "-извинись") ~= nil and  (nick ~= "Barawik_") then
-       cb.say(BOT_NAME .. COLOR1 .. "Пускай это напишет Barawik_" .."§6Тогда я извинюсь!")
-  end
      if string.find(msg, "-админские") ~= nil and  (nick == "Barawik_" or nick == "TuskT") then
        cb.say(BOT_NAME .. COLOR6 .. "планы-планы-планы")
     end
      if string.find(msg, "-configs") ~= nil and  (nick == "Barawik_" or nick == "TuskT") then
-       cb.say(BOT_NAME .. COLOR4 .."§cBotTraveler (Magazz)")
-     cb.say(BOT_NAME .. COLOR6 .. "Версия прошивки:" .." §4M0aCgLaUzAz556")
-     cb.say(BOT_NAME .. COLOR6 .. "Голосовой помощник:" .." §bОтсутствует")
+       cb.say(BOT_NAME .. COLOR4 .."§cBotTraveler (RabbitBot)")
+     cb.say(BOT_NAME .. COLOR6 .. "Версия прошивки:" .." §558858388583jegdfgb3yr27")
      cb.say(BOT_NAME .. COLOR6 .. "Версия ПО:" .." §c0.1")
      cb.say(BOT_NAME .. COLOR6 .. "Разработка:" .."Barawik_")
   end
-  if string.find(msg, "-configs") ~= nil and  (nick ~= "Barawik_" or nick ~= "TuskT") then
-       cb.say(BOT_NAME .. COLOR5 .. "Для использования команды вы должны быть вышестоящим лицом")
-  end
 end
 
-          component.chat_box.say(BOT_NAME..COLOR7.."BotTraveler - Magazz")
+          component.chat_box.say(BOT_NAME..COLOR7.."BotTraveler - Rabbits")
           component.chat_box.say(BOT_NAME..COLOR1.."Запуск системы..")
 
  
