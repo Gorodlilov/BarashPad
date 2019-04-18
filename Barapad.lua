@@ -34,9 +34,8 @@ if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
 end
 
-if not (fs.exists(shell.getWorkingDirectory() .. "/UPDBar.lua")) then
-	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
-end
+shell.execute(shell.getWorkingDirectory() .. "rm UPDBar.lua")
+shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/UPDBar.lua UPDBar.lua")
 
 if not (fs.exists("/autorun.lua")) then
 	print("\nНастройка автозапуска...")
@@ -76,19 +75,17 @@ function Login()
 		Bar.MidL(WIGHT,10,"&a==========================")
 		Bar.MidL(WIGHT,37,"&a==========================")
 		Bar.MidL(WIGHT,21,"&a==========================")
-		Bar.MidL(WIGHT,16,"&a==========================")
+		Bar.MidL(WIGHT,15,"&a==========================")
 		Bar.MidL(WIGHT,3, "&aBaraPad by:")
 		Bar.MidL(WIGHT,7, "&bBarawik_")
 		Bar.MidL(WIGHT,8, "&bInfinityDark")
 		Bar.MidL(WIGHT,12, "&fХотите получить доступ?")
 		Bar.MidL(WIGHT,13, "&fОтпишите в личку ВК")
 		Bar.MidL(WIGHT,14, "&chttps://vk.cc/8OUJv2")
-		Bar.MidL(WIGHT,18, "&fПолучить пароль доступа:")
-		Bar.MidL(WIGHT,19, "&fhttps://discord.gg/vQNqtan")
 		Bar.MidL(WIGHT,23, "&fИзменения:")
 		Bar.MidL(WIGHT,24, "&b1. Изменены цвета программы")
-		Bar.MidL(WIGHT,25, "&b2. TuskT имеет доступ")
-		Bar.MidL(WIGHT,26, "&e3. Добавлен авторан")
+		Bar.MidL(WIGHT,26, "&e2. Добавлен авторан")
+		Bar.MidL(WIGHT,27, "&e3. Обновлен updater.")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,40, "&c2.3")
