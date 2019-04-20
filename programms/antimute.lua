@@ -3,7 +3,7 @@
 --| Проект MCSkill.ru TMSB |
 --|  Author: InfinityDark  |
 --|  Developer: Barawik_   |
---|  Version 0.2 Lua Lang  |
+--|  Version 0.3 Lua Lang  |
 --|========================|
 
 -- | Планируется графический интерфейс.
@@ -15,6 +15,7 @@ local shell=require("shell")
 local cb=component.chat_box
 local plrs={}
 cb.setDistance(100)
+local color = g.setForeground
 local term=require("term")
 local g=component.gpu
 local colors = require("colors")
@@ -44,7 +45,7 @@ local colorsTable = {
             ['&f'] = function() color(0xFFFFFF) end }
 
 cb.say(BOTNAME.."§aЗапущено!")
-cb.say(BOTNAME.."§aТекущая версия: 0.2")
+cb.say(BOTNAME.."§aТекущая версия: 0.3")
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
