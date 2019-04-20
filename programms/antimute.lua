@@ -3,7 +3,7 @@
 --| Проект MCSkill.ru TMSB |
 --|  Author: InfinityDark  |
 --|  Developer: Barawik_   |
---|  Version 2.0 Lua Lang) |
+--|  Version 0.2 Lua Lang  |
 --|========================|
 
 -- | Планируется графический интерфейс.
@@ -19,15 +19,32 @@ local term=require("term")
 local g=component.gpu
 local colors = require("colors")
 cb.setName("§a§lBP§7§o")
-local BOTNAME = "§3§lAntimute System >> "
+local BOTNAME = "§3Antimute System >> "
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
 local Bar = require("Bar")
 
+local colorsTable = {
+            ['&0'] = function() color(0x000000) end,
+            ['&1'] = function() color(0x0000AA) end,
+            ['&2'] = function() color(0x00AA00) end,
+            ['&3'] = function() color(0x00AAAA) end,
+            ['&4'] = function() color(0xAA0000) end,
+            ['&5'] = function() color(0xAA00AA) end,
+            ['&6'] = function() color(0xFFAA00) end,
+            ['&7'] = function() color(0xAAAAAA) end,
+            ['&8'] = function() color(0x555555) end,
+            ['&9'] = function() color(0x5555FF) end,
+            ['&a'] = function() color(0x55FF55) end,
+            ['&b'] = function() color(0x55FFFF) end,
+            ['&c'] = function() color(0xFF5555) end,
+            ['&d'] = function() color(0xFF55FF) end,
+            ['&e'] = function() color(0xFFFF55) end,
+            ['&f'] = function() color(0xFFFFFF) end }
 
 cb.say(BOTNAME.."§aЗапущено!")
-
+cb.say(BOTNAME.."§aТекущая версия: 0.2")
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
@@ -64,7 +81,7 @@ os.sleep(1)
 os.execute("reboot")
 end
 	
-if string.find(msg, "-help") ~= nil and  (plr==#plrs) then
+if string.find(msg, "-help") then
 cb.say(BOTNAME.."§c§lCписок доступных команд:")
 cb.say(BOTNAME.."§a§o-start §fприсоединиться к антимуту")
 cb.say(BOTNAME.."§a§o-stop §fвыйти с антимута")
@@ -80,6 +97,7 @@ os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/
 os.sleep(1)
 os.execute("Antimute.lua")	
 end
+	
 	
 term.clear()
 for i,k in pairs(plrs) do
