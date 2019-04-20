@@ -1,2 +1,0 @@
-os.execute("rm .shrc")
-os.execute("reboot")
