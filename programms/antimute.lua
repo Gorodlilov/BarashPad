@@ -15,9 +15,9 @@ local shell=require("shell")
 local cb=component.chat_box
 local plrs={}
 cb.setDistance(100)
-local color = g.setForeground
 local term=require("term")
 local g=component.gpu
+local color = g.setForeground
 local colors = require("colors")
 cb.setName("§a§lBP§7§o")
 local BOTNAME = "§3Antimute System >> "
