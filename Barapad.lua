@@ -28,7 +28,6 @@ Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["InfinityDark"] = "2277"
 Bar.ps["TuskT"] = "12345"
-Bar.ps["Noley0515"] = "123579"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
@@ -77,9 +76,8 @@ function Login()
 		Bar.MidL(WIGHT,13, "&fОтпишите в личку ВК")
 		Bar.MidL(WIGHT,14, "&chttps://vk.cc/8OUJv2")
 		Bar.MidL(WIGHT,23, "&fИзменения:")
-		Bar.MidL(WIGHT,24, "&b1. Изменены цвета программы")
-		Bar.MidL(WIGHT,26, "&e2. Добавлен авторан")
-		Bar.MidL(WIGHT,27, "&e3. Обновлен updater.")
+		Bar.MidL(WIGHT,24, "&b1. Добавлен autorun")
+		Bar.MidL(WIGHT,26, "&b2. Изменено обновление pad'a.")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
 		Bar.MidL(WIGHT,40, "&c2.3")
@@ -111,19 +109,19 @@ end
 function Rules(nick)
 	if (login) then
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,5,"==========================")
-		Bar.MidL(WIGHT,11,"==========================")
-		Bar.MidL(WIGHT,15,"==========================")
-		Bar.MidL(WIGHT,31,"Добро пожаловать")
-		g.setForeground(COLOR1)
-		Bar.MidL(WIGHT,3, "Общая инфа:")
-		Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
-		Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
-		Bar.MidL(WIGHT,8, "Но если над другой, то")
-		Bar.MidL(WIGHT,9, "в настройках каждой проги")
-		Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
-		Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
-		Bar.MidL(WIGHT,32,nick)
+		--Bar.MidL(WIGHT,5,"==========================")
+		--Bar.MidL(WIGHT,11,"==========================")
+		--Bar.MidL(WIGHT,15,"==========================")
+		--Bar.MidL(WIGHT,31,"Добро пожаловать")
+		--g.setForeground(COLOR1)
+		--Bar.MidL(WIGHT,3, "Общая инфа:")
+		--Bar.MidL(WIGHT,6, "Монитор в идеале 5х3")
+		--Bar.MidL(WIGHT,7, "блока, чтоб не париться.")
+		--Bar.MidL(WIGHT,8, "Но если над другой, то")
+		--Bar.MidL(WIGHT,9, "в настройках каждой проги")
+		--Bar.MidL(WIGHT,10, "меняйте параметр WIGHT")
+		--Bar.MidL(WIGHT,12, "Autorun НЕ ставится свой,")
+		Bar.MidL(WIGHT,32,"Приветик," + nick)
 		Bar.Button(7,34,18,3,COLOR1,COLOR2,"Обновить")
 		Bar.Button(7,37,18,3,COLOR1,COLOR2,"Выйти")
 	end
@@ -237,7 +235,6 @@ function Click(w,h)
 end
 
 function Table()
-	Bar.DrawImage(mid - 28,7, shell.getWorkingDirectory() .. "/LogoSkill.lua")
 	Bar.Button(mid - 32,37,20,3,COLOR1,COLOR2,"Проги")
 	Bar.Button(mid - 10,37,20,3,COLOR1,COLOR2,"Войти в шелл")
 	Bar.Button(mid + 12,37,20,3,COLOR1,COLOR2,"Тех.панель")
@@ -249,7 +246,7 @@ end
 function getButtons(w,h)
 	if w>=7 and w<= 25 and h>=34 and h<=36 then --Кнопка обновить
 		term.clear()
-		shell.execute("UPDBar.lua")
+		shell.execute("/autorun.lua")
 	elseif w>=7 and w<= 25 and h>=37 and h<=39 then --Кнопка Логин
 		Login()
 	elseif w>=mid-32 and w<= mid-13 and h>=37 and h<=39 then --Кнопка Проги
