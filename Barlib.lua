@@ -16,9 +16,6 @@ local internet = require("internet")
 local g = component.gpu
 local back = 0xffffff
 
-
-
-
 function Bar.Resolution(w,h) --Резоль
 	if w < 48 then
 		w = 48 end
@@ -79,41 +76,6 @@ function Bar.DrawImage(x,y,path) --Отрисовка картинок
 	end
 	g.setBackground(back)
 	g.setForeground(font)
-end
-
-function Bar.Com(command) --Выполнить команду
-	if (component.isAvailable("opencb")) then
-		local _,c = component.opencb.execute(command)
-		return c
-	end
-end
-
-function Bar.Money(nick) --Баланс игрока 
-	local c = Bar.Com("money " .. nick)
-	local _, b = string.find(c, "Баланс: §f")
-	local balance
-	if string.find(c, "Emeralds") ~= nil then
-		balance = unicode.sub(c, b - 16, unicode.len(c) - 10)
-	else
-		balance = unicode.sub(c, b - 16, unicode.len(c) - 9)
-	end	
-	return (balance)
-end
-
-function Bar.Check_money(nick,price) --Чекнуть, баланс, если хватает, то снять бабки
-	local balance = Bar.Money(nick)
-	balance = string.sub(balance, 1, string.len(balance) - 3)
-	if string.find(balance, "-") ~= nil then
-		return false
-	else
-		balance = string.gsub(balance,",","")
-		if tonumber(balance) < price then
-			return false
-		else
-			Bar.Com("money take " .. nick .. " " .. price)
-			return true
-		end
-	end
 end
 
 
@@ -200,14 +162,6 @@ function Bar.Button(x,y,w,h,col1,col2,text) -- Кнопка
 	g.set(x+w-1,y+h-1,"┘")
 end
 
-function Bar.TakeItem(nick, item, numb) --Забрать итем
-	if string.find(Bar.Com("clear " .. nick .. " " .. item .. " " .. numb), "Убрано") ~= nil then
-		return true
-	else
-		return false
-	end
-end
-
 function Bar.ClearL(h) --Очистка левой части
 	g.fill(3,2,26,h-2," ")
 end
@@ -270,50 +224,6 @@ function Bar.Run(url, ...) --Запуск и удаление файла
 		--os.sleep(2)
 	end
 	fs.remove(tmpFile)
-end
-
-function Bar.CheckOP(nick) --Чек на опку
-	return true
-end
-
-function Bar.Playtime(nick) --Плейтайм
-	local c = Bar.Com("playtime " .. nick)
-	local _, b = string.find(c, "на сервере ")
-	if string.find(c, "час") then
-		local text = string.sub(c, b+1, string.find(c, " час"))
-		return text .. " ч."
-	else
-		local text = string.sub(c, b+1, string.find(c, " минут"))
-		return text .. " мин."
-	end
-	
-end
-
-function Bar.CheckMute(nick) --Чекнуть висит ли мут
-	local c = Bar.Com("checkban " .. nick)
-	if string.find(c, "Muted: §aFalse") ~= nil then
-		return false
-	else
-		return true
-	end
-end
-
-function Bar.GetHostTime(timezone) --Получить текущее реальное время компьютера, хостящего сервер майна
-	timezone = timezone or 2
-	local file = io.open("/HostTime.tmp", "w")
-	file:write("123")
-	file:close()
-	local timeCorrection = timezone * 3600
-	local lastModified = tonumber(string.sub(fs.lastModified("/HostTime.tmp"), 1, -4)) + timeCorrection
-	fs.remove("HostTime.tmp")
-	local year, month, day, hour, minute, second = os.date("%Y", lastModified), os.date("%m", lastModified), os.date("%d", lastModified), os.date("%H", lastModified), os.date("%M", lastModified), os.date("%S", lastModified)
-	return tonumber(day), tonumber(month), tonumber(year), tonumber(hour), tonumber(minute), tonumber(second)
-end
-
-function Bar.Time(timezone) --Получет настоящее время, стоящее на Хост-машине
-	local time = {Bar.GetHostTime(timezone)}
-	local text = string.format("%02d:%02d:%02d", time[4], time[5], time[6])
-	return text
 end
 
 function Bar.Hex(Hcolor) --Конвертация Dec в Hex
