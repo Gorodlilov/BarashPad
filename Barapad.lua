@@ -27,6 +27,7 @@ local COLOR_SHELL = 0x28071a --Цвет шелла
 Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
 Bar.ps["InfinityDark"] = "2277"
+Bar.ps["FarmLander"] = "1103"
 Bar.ps["TuskT"] = "12345"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
