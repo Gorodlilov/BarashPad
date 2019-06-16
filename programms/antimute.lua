@@ -3,7 +3,7 @@
 --| Проект MCSkill.ru TMSB |
 --|  Author: InfinityDark  |
 --|  Developer: Barawik_   |
---|  Version 0.3 Lua Lang  |
+--|  Version 0.3.1 Lua Lang  |
 --|========================|
 
 -- | Планируется графический интерфейс.
@@ -45,7 +45,7 @@ local colorsTable = {
             ['&f'] = function() color(0xFFFFFF) end }
 
 cb.say(BOTNAME.."§aЗапущено!")
-cb.say(BOTNAME.."§aТекущая версия: 0.3")
+cb.say(BOTNAME.."§aТекущая версия: 0.3.1")
 local function rem(player)
 for i,k in pairs(plrs) do
 if k==player then
@@ -94,9 +94,11 @@ end
 if msg=="-updateapp" then
 cb.say(BOTNAME.."Начинаю обновление программы.")
 os.sleep(1)
+os.execute("rm Antimute.lua")
 os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
+os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/autorun.lua nznznznznz.lua")
 os.sleep(1)
-os.execute("Antimute.lua")	
+os.execute("nznznznznz.lua")	
 end
 	
 	
