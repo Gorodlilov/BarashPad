@@ -24,7 +24,6 @@ local BOTNAME = "§3Antimute System >> "
 term.clear()
 
 local WIGHT, HEIGHT = 146, 42 --Разрешение моника 146/112 x 42
-local Bar = require("Bar")
 
 local colorsTable = {
             ['&0'] = function() color(0x000000) end,
