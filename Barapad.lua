@@ -139,10 +139,10 @@ end
 function ProgrammPanel()
 	g.fill(mid - 43, 13, 83, 23, " ")
 	tech = false
-	Bar.MidR(WIGHT,11,"&e&lОБЩИЕ ДОСТУПНЫЕ ПРОГРАММЫ ДЛЯ НЕ ПЕТУХОВ")
+	Bar.MidR(WIGHT,11,"&e&lОБЩИЕ ДОСТУПНЫЕ ПРОГРАММЫ")
 	g.setForeground(COLOR3)
 	Bar.MidR(WIGHT,12, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓")
-	Bar.MidR(WIGHT,13, "┃                       &bНазвание&r                      ┃     &bСтатус&r     ┃  &bРазмер&r  ┃")
+	Bar.MidR(WIGHT,13, "┃                       &bИмя     &r                      ┃     &bЕсть? &r     ┃  &bВес   &r  ┃")
 	Bar.MidR(WIGHT,14, "┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━╋━━━━━━━━━━┫")
 	for i = 1, 9 do 
 		Bar.MidR(WIGHT,i+14, "┃                                                     ┃                ┃          ┃")
@@ -262,6 +262,7 @@ function getButtons(w,h)
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/autorun.lua /autorun.lua")
 		Bar.ClearL(HEIGHT)
             	Bar.ClearR(WIGHT,HEIGHT)
+		Table()
 	end
 end
 
