@@ -77,11 +77,11 @@ function Login()
 		Bar.MidL(WIGHT,13, "&fОтпишите в личку ВК")
 		Bar.MidL(WIGHT,14, "&chttps://vk.cc/8OUJv2")
 		Bar.MidL(WIGHT,23, "&fИзменения:")
-		Bar.MidL(WIGHT,24, "&b1. Добавлен autorun")
-		Bar.MidL(WIGHT,26, "&b2. Изменено обновление pad'a.")
+		Bar.MidL(WIGHT,24, "&b1. МЫ ВЕРНУЛИСЬ")
+		Bar.MidL(WIGHT,26, "&b2. Клоп не зашемлен")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "&c2.3")
+		Bar.MidL(WIGHT,40, "&c2.4")
 	
 	-- Конец информации
 	
