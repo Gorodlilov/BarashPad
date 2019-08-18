@@ -240,8 +240,7 @@ function Table()
 	Bar.Button(mid - 10,37,20,3,COLOR1,COLOR2,"Войти в шелл")
 	Bar.Button(mid + 12,37,20,3,COLOR1,COLOR2,"Тех.панель")
 	Bar.Button(WIGHT-11,3,7,4,COLOR1,COLOR2,"")
-	Bar.Text(WIGHT-10,4,"&b┌│┐&r")
-	Bar.Text(WIGHT-10,5,"&b└─┘&r")
+	Bar.Word(WIGHT-10,4,"A")
 end
 
 function getButtons(w,h)
@@ -259,7 +258,8 @@ function getButtons(w,h)
 	elseif w>=mid+12 and w<= mid+31 and h>=37 and h<=39 then --Кнопка Тех.Панель
 		TechPanel()
 	elseif w>=WIGHT-11 and w<= WIGHT-6 and h>=3 and h<=6 then --Кнопка Офф
-		computer.shutdown()
+		shell.execute("rm /autorun.lua")
+		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/autorun.lua /autorun.lua")
 	end
 end
 
