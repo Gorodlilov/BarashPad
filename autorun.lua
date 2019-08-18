@@ -10,4 +10,4 @@ shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/
 term.clear()
 local dir = " .. shell.getWorkingDirectory() .. "
 if dir ~= '/' then shell.setWorkingDirectory(dir) end
-shell.execute('Barapad')
+shell.execute('/Barapad')
