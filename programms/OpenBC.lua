@@ -19,8 +19,7 @@ local gpu = component.gpu
 event.shouldInterrupt = function() return false end
 
 local masters = {
-	Shyvana = 1,
-	Astro = 1,
+	Barawik_ = 1,
 }
 function startup()
 	local setf = gpu.setForeground
@@ -69,6 +68,7 @@ end
 --startup()
 local chat = component.chat_box
 --gpu.setResolution(140,28)
+chat.setDistance(1000000)
 gpu.setResolution(160,28)
 local timers = {}
 function ioLoad()
@@ -187,7 +187,7 @@ local helpStrings = {
 }
 c.helpHeight = #helpStrings
 function say(msg)
-	component.chat_box.say("§8[§bBarapad§8]§a Любовник§f: : " .. tostring(msg),20)
+	component.chat_box.say("§8[§aПомощник§8]§a Любовник§f: : " .. tostring(msg),20)
 end
 function listen(msg)
 	if msg ~= "" then
@@ -561,7 +561,7 @@ function buttonChangeName(x,y)
 		if newName:find("§") == nil then
 			newName = "§7" .. newName
 		end
-		name2 = "§8[§bBarapad§8]§a " .. newName .. "§f: "
+		name2 = "§8[§aПомощник§8]§a " .. newName .. "§f: "
 		saveName2()
 	end
 end
