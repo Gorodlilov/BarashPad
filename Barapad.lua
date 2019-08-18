@@ -26,9 +26,9 @@ local COLOR_SHELL = 0x28071a --Цвет шелла
 
 Bar.ps = {nick = {}}
 Bar.ps["Barawik_"] = "11042005"
+Bar.ps["klop2003"] = "1488"
 Bar.ps["InfinityDark"] = "2277"
-Bar.ps["TuskT"] = "12345"
-Bar.ps["FarmLander"] = "1103"
+Bar.ps["Donowy"] = "1488"
 -------------------------------------------------
 if not (fs.exists(shell.getWorkingDirectory() .. "/Programms.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Programms.lua Programms.lua")
