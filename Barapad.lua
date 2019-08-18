@@ -78,10 +78,10 @@ function Login()
 		Bar.MidL(WIGHT,14, "&chttps://vk.cc/8OUJv2")
 		Bar.MidL(WIGHT,23, "&fИзменения:")
 		Bar.MidL(WIGHT,24, "&b1. МЫ ВЕРНУЛИСЬ")
-		Bar.MidL(WIGHT,26, "&b2. Клоп не зашемлен")
+		Bar.MidL(WIGHT,25, "&b2. Клоп не зашемлен")
 		Bar.MidL(WIGHT,39,"&fТекущая версия:")
 		g.setForeground(COLOR2)
-		Bar.MidL(WIGHT,40, "&c2.4")
+		Bar.MidL(WIGHT,40, "&c2.5")
 	
 	-- Конец информации
 	
@@ -100,7 +100,7 @@ g.setForeground(COLOR1)
             Rules(nick)
             Table()
 		else 
-			Bar.MidR(WIGHT,33,"Неверные данные, " .. nick)
+			Bar.MidR(WIGHT,33,"Неверные данные ПЕТУХ ДЫРЯВЫЙ ")
 			os.sleep(1)
 			Login()
     end
@@ -139,7 +139,7 @@ end
 function ProgrammPanel()
 	g.fill(mid - 43, 13, 83, 23, " ")
 	tech = false
-	Bar.MidR(WIGHT,11,"&bСписок программ для OpenComputers&r")
+	Bar.MidR(WIGHT,11,"&e&lОБЩИЕ ДОСТУПНЫЕ ПРОГРАММЫ ДЛЯ НЕ ПЕТУХОВ")
 	g.setForeground(COLOR3)
 	Bar.MidR(WIGHT,12, "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━┓")
 	Bar.MidR(WIGHT,13, "┃                       &bНазвание&r                      ┃     &bСтатус&r     ┃  &bРазмер&r  ┃")
@@ -260,6 +260,8 @@ function getButtons(w,h)
 	elseif w>=WIGHT-11 and w<= WIGHT-6 and h>=3 and h<=6 then --Кнопка Офф
 		shell.execute("rm /autorun.lua")
 		shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/autorun.lua /autorun.lua")
+		Bar.ClearL(HEIGHT)
+            	Bar.ClearR(WIGHT,HEIGHT)
 	end
 end
 
