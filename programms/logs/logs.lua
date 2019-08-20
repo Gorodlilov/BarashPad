@@ -6,7 +6,7 @@ local e=require('unicode')
 local f=a.gpu;
 local g=a.isAvailable;
 local h='\n'
-local j='http://logs.s8.mcskill.ru/Islandcraft/20-08-2019.txt'
+local j='https://logs.s8.mcskill.ru/Islandcraft/20-08-2019.txt'
 local k={}
 local l,m=f.getResolution()
 local n={general=0x00ff45,text=0xCCCCCC,white=0xFFFFFF,red=0xFF0000,black=0x000000}
