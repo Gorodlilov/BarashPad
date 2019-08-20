@@ -160,11 +160,11 @@ function DrawProgs(s)
 			g.set(mid-19-unicode.len(name_progs)/2, i+16, ">>> " .. name_progs .. " <<<")		
 		end
 		if (fs.exists(shell.getWorkingDirectory() .. "/" .. progs[i][1][1] .. ".lua")) then
-			Bar.Text(mid + 12, i+16, "&2 Установлено  &r")
+			Bar.Text(mid + 12, i+16, "&2      Да      &r")
 			local size = fs.size(shell.getWorkingDirectory() .. "/" .. progs[i][1][1] .. ".lua")
-			Bar.Text(mid + 33 - unicode.len(size)/2, i+16, size .. "B")
+			Bar.Text(mid + 33 - unicode.len(size)/2, i+16, size .. "кг.")
 		else
-			Bar.Text(mid + 12, i+16, "&8Не установлено&r")
+			Bar.Text(mid + 12, i+16, "&8      Нет     &r")
 		end
 	end
 	g.fill(mid - 42, 27, 84, 10, " ")
