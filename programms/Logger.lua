@@ -87,10 +87,10 @@ function user_say(msg, nick)
       os.exit()
 	end
     if string.find(msg, "~выключись") ~= nil and (nick == "Barawik_") then
-    	c.say(c_e .. "Вырубаюсь")
+    	c.say("Вырубаюсь")
     	os.exit()
     elseif string.find(msg, "~выключись") ~= nil and (nick ~= "Barawik_")  then
-    	c.say(c_e .. "Атань," ..PIDOR[math.random(1, #PIDOR)] .. " " .. nick .. ", ты ни дастоен этаго")
+    	c.say("Атань," ..PIDOR[math.random(1, #PIDOR)] .. " " .. nick .. ", ты ни дастоен этаго")
     end
     if string.find(msg, "~логи") ~= nil then
     	os.execute("/nlogs.lua")
