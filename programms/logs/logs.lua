@@ -6,10 +6,18 @@ local e=require('unicode')
 local f=a.gpu;
 local g=a.isAvailable;
 local h='\n'
-local j='https://logs.s8.mcskill.ru/Islandcraft/20-08-2019.txt'
 local k={}
 local l,m=f.getResolution()
 local n={general=0x00ff45,text=0xCCCCCC,white=0xFFFFFF,red=0xFF0000,black=0x000000}
+function input()
+f.setForeground(n.general)
+io.write('Введите дату для поиска (20-08)')
+local date=io.read()
+io.write('> Поиск в логах сервера ТМСБ, info, exit: ')
+local y=io.read()
+return tostring(y):gsub('[[%]]+',''):gsub('%%','')
+end;
+local j='https://logs.s8.mcskill.ru/Islandcraft/'..date..'-2019.txt'
 function check(o)
 findCounter=0;
 breakSearch=false;
@@ -30,12 +38,6 @@ for r in p:gmatch(o) do
 	if breakSearch then 
 	break 
 end end end;
-function input()
-f.setForeground(n.general)
-io.write('> Поиск в логах сервера ТМСБ, info, exit: ')
-local y=io.read()
-return tostring(y):gsub('[[%]]+',''):gsub('%%','')
-end;
 function setText(z,A)
 f.setForeground(A)
 print(z)
