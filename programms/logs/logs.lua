@@ -9,7 +9,7 @@ local h='\n'
 local k={}
 local l,m=f.getResolution()
 local n={general=0x00ff45,text=0xCCCCCC,white=0xFFFFFF,red=0xFF0000,black=0x000000}
-io.write('Введите дату для поиска (20-08)')
+io.write('Введите дату для поиска (Пример: 01-08): ')
 local date=io.read()
 local j='https://logs.s8.mcskill.ru/Islandcraft/'..date..'-2019.txt'
 function input()
