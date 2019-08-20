@@ -25,12 +25,14 @@ for r in p:gmatch(o) do
 	local y=w:sub(1,x-1):reverse():gsub('%d+m',''):gsub('%d+;',''):gsub('',''):gsub('[[%]]+',''):gsub(o,'§c'..o..'§7'):gsub('m$','')
 	q=t;
 	findCounter=findCounter+1;
-	chat.say(y)end;
+	chat.say(y)
+	end;
 	if breakSearch then 
-	break end end end;
+	break 
+end end end;
 function input()
 f.setForeground(n.general)
-io.write('> Поиск в логах сервера HitechCraft#1, info, exit: ')
+io.write('> Поиск в логах сервера ТМСБ, info, exit: ')
 local y=io.read()
 return tostring(y):gsub('[[%]]+',''):gsub('%%','')
 end;
@@ -65,7 +67,8 @@ while true do
 	else 
 		setText('Ищу "'..C..'" в логах сервера и вывожу в локал чат... Нажать "Q" для отмены',n.text)
 		chat.say('Поиск "§a'..C..'§7" в логах сервера...')
-		check(C)chat.say('Найдено §a'..findCounter..'§7 совпадений.')
+		check(C)
+		chat.say('Найдено §a'..findCounter..'§7 совпадений.')
 		setText('Найдено '..findCounter..' совпадений. Отправлены в локал чат!\n',n.text)
 	end
 end;
