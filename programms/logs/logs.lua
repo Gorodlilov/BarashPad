@@ -9,6 +9,7 @@ local h='\n'
 local k={}
 local l,m=f.getResolution()
 local n={general=0x00ff45,text=0xCCCCCC,white=0xFFFFFF,red=0xFF0000,black=0x000000}
+f.setForeground(n.general)
 io.write('Введите дату для поиска (Пример: 01-08): ')
 local date=io.read()
 local j='https://logs.s8.mcskill.ru/Islandcraft/'..date..'-2019.txt'
@@ -16,29 +17,29 @@ function input()
 f.setForeground(n.general)
 
 if string.find(date, "-01") then
-	data = date:gsub('-01', "января")
+	data = date:gsub('-01', " января")
 elseif string.find(date, "-02") then
-	data = date:gsub('-02', "февраля")
+	data = date:gsub('-02', " февраля")
 elseif string.find(date, "-03") then
-	data = date:gsub('-03', "марта")
+	data = date:gsub('-03', " марта")
 elseif string.find(date, "-04") then
-	data = date:gsub('-04', "апреля")
+	data = date:gsub('-04', " апреля")
 elseif string.find(date, "-05") then
-	data = date:gsub('-05', "мая")
+	data = date:gsub('-05', " мая")
 elseif string.find(date, "-06") then
-	data = date:gsub('-06', "июня")
+	data = date:gsub('-06', " июня")
 elseif string.find(date, "-07") then
-	data = date:gsub('-07', "июля")
+	data = date:gsub('-07', " июля")
 elseif string.find(date, "-08") then
-	data = date:gsub('-08', "августа")
+	data = date:gsub('-08', " августа")
 elseif string.find(date, "-09") then
-	data = date:gsub('-09', "сентября")
+	data = date:gsub('-09', " сентября")
 elseif string.find(date, "-10") then
-	data = date:gsub('-10', "октября")
+	data = date:gsub('-10', " октября")
 elseif string.find(date, "-11") then
-	data = date:gsub('-11', "ноября")
+	data = date:gsub('-11', " ноября")
 elseif string.find(date, "-12") then
-	data = date:gsub('-12', "декабря")
+	data = date:gsub('-12', " декабря")
 else
 	io.write('Неправильно введен месяц!')
 	os.exit()
