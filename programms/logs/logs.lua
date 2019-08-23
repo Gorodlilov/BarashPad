@@ -14,7 +14,7 @@ local date=io.read()
 local j='https://logs.s8.mcskill.ru/Islandcraft/'..date..'-2019.txt'
 function input()
 f.setForeground(n.general)
-io.write('> Поиск в логах сервера ТМСБ, info, exit: ')
+io.write('> Поиск в логах сервера ТМСБ за '..data..'число. Команды: info, exit: ')
 local y=io.read()
 return tostring(y):gsub('[[%]]+',''):gsub('%%','')
 end;
@@ -30,7 +30,7 @@ for r in p:gmatch(o) do
 	local v=p:sub(1,u-1)
 	local w=v:reverse()
 	local x=w:find(h)
-	local y=w:sub(1,x-1):reverse():gsub('%d+m',''):gsub('%d+;',''):gsub('',''):gsub('[[%]]+',''):gsub(o,'§c'..o..'§7'):gsub('m$','')
+	local y=w:sub(1,x-1):reverse():gsub('%d+m',''):gsub('%d+;',''):gsub('',''):gsub('[[%]]+',''):gsub(o,'§a'..o..'§7'):gsub('m$','')
 	q=t;
 	findCounter=findCounter+1;
 	chat.say(y)
