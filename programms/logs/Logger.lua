@@ -80,16 +80,16 @@ function user_say(msg, nick)
       c.say("Обновления обнаружены")
       os.sleep(3)
 	  c.say("Обновляемся...")
-      os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/Logger.lua logger.lua")
+      os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/logs/Logger.lua logger.lua")
 	  c.say("Перезагрузка систем.")
       os.sleep(3)
       os.execute("logger")
       os.exit()
 	end
-    if string.find(msg, "~выключись") ~= nil and (nick == "Barawik_") then
+    if string.find(msg, "~выключись") ~= nil then
     	c.say("Вырубаюсь")
     	os.exit()
-    elseif string.find(msg, "~выключись") ~= nil and (nick ~= "Barawik_")  then
+    elseif string.find(msg, "~выключись") ~= nil then
     	c.say("Атань," ..PIDOR[math.random(1, #PIDOR)] .. " " .. nick .. ", ты ни дастоен этаго")
     end
     if string.find(msg, "~логи") ~= nil then
