@@ -14,7 +14,7 @@ local date=io.read()
 local j='https://logs.s8.mcskill.ru/Islandcraft/'..date..'-2019.txt'
 function input()
 f.setForeground(n.general)
-io.write('> Поиск в логах сервера ТМСБ за '..data..'число. Команды: info, exit: ')
+io.write('> Поиск в логах сервера ТМСБ за '..date..'число. Команды: info, exit: ')
 local y=io.read()
 return tostring(y):gsub('[[%]]+',''):gsub('%%','')
 end;
