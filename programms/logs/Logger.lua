@@ -59,13 +59,16 @@ function message(msg, nick)
 		elseif string.find(msg2, "!") then
 			msg2 = string.gsub(msg2, "!", "")
 			table.insert(loc, " [G] " .. nick .. " >> " .. msg2)
+			file2 = io.open("/nlogs.lua", "a")
+			file2:write("c.say('"..nick .." >> "..msg2.."')\n")
+			file2:close()
 		else
 			table.insert(loc," [L] " .. nick .. " >> " .. msg2)
+			file2 = io.open("/nlogs.lua", "a")
+			file2:write("c.say('"..nick .." >> "..msg2.."')\n")
+			file2:close()
 		end
         draw()
-        file2 = io.open("/nlogs.lua", "a")
-		file2:write("c.say('"..nick .. " >> " .. msg2 .. "')\n")
-		file2:close()
 	end
 
 function user_say(msg, nick)
@@ -80,16 +83,16 @@ function user_say(msg, nick)
       c.say("Обновления обнаружены")
       os.sleep(3)
 	  c.say("Обновляемся...")
-      os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/logs/Logger.lua logger.lua")
+      os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/Logger.lua logger.lua")
 	  c.say("Перезагрузка систем.")
       os.sleep(3)
       os.execute("logger")
       os.exit()
 	end
-    if string.find(msg, "~выключись") ~= nil then
+    if string.find(msg, "~выключись") ~= nil and (nick == "Barawik_") then
     	c.say("Вырубаюсь")
     	os.exit()
-    elseif string.find(msg, "~выключись") ~= nil then
+    elseif string.find(msg, "~выключись") ~= nil and (nick ~= "Barawik_")  then
     	c.say("Атань," ..PIDOR[math.random(1, #PIDOR)] .. " " .. nick .. ", ты ни дастоен этаго")
     end
     if string.find(msg, "~логи") ~= nil then
