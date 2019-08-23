@@ -95,9 +95,8 @@ cb.say(BOTNAME.."Начинаю обновление программы.")
 os.sleep(1)
 os.execute("rm Antimute.lua")
 os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/antimute.lua Antimute.lua")
-os.execute("wget -f https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barapad.lua /Barapad.lua")
 os.sleep(1)
-os.execute("/Barapad.lua")	
+os.execute("Antimute.lua")	
 end
 	
 	
