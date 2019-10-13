@@ -51,8 +51,10 @@ end
 
 function sky.com(command) --Выполнить команду
 	if (component.isAvailable("command_block")) then
-		local _,c = component.command_block.setCommand(command);component.command_block.executeCommand()
+		local cmd = component.command_block
+		local _,c = cmd.setCommand(command)
 		return c
+		cmd.executeCommand()
 	end
 end
 
