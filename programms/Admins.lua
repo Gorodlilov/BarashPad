@@ -6,7 +6,6 @@ local shell = require("shell")
 local fs = require("filesystem")
 local unicode=require("unicode")
 local serial = require("serialization")
-local sky = require("sky")
 local g = component.gpu
 event.shouldInterrupt = function () return false end
 --------------------Настройки--------------------
@@ -21,7 +20,7 @@ local MOD_CHAT_COLOR = {"&8", "&8", "&8", "&8", "&9", "&9", "&3", "&5", "&5", "&
 if not (fs.exists(shell.getWorkingDirectory() .. "/lib/sky.lua")) then
 	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/sky.lua /lib/sky.lua -f")
 end
-
+local sky = require("sky")
 local mid = WIDTH / 2
 local sel = nil
 local admins
