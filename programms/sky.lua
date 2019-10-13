@@ -50,8 +50,8 @@ function sky.drawImage(x,y,path) --Отрисовка картинок
 end
 
 function sky.com(command) --Выполнить команду
-	if (component.isAvailable("opencb")) then
-		local _,c = component.opencb.execute(command)
+	if (component.isAvailable("debug")) then
+		local _,c = debug.runCommand(command)
 		return c
 	end
 end
