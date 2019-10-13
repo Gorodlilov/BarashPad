@@ -18,9 +18,9 @@ local SCOREBOARDS = {"Admin", "TAdmin", "Global", "Global", "GD", "GM", "STMod",
 "Helper2", "Helper1"} --Названия Скорбордов (Создать такие же на серве, либо поменять тут)
 local MOD_CHAT_COLOR = {"&8", "&8", "&8", "&8", "&9", "&9", "&3", "&5", "&5", "&6", "&2", "&a"} --Изменение цвета ника в Мод.Чате
 -------------------------------------------------
---if not (fs.exists(shell.getWorkingDirectory() .. "/AdminsBD.lua")) then
---	shell.execute("wget https://www.dropbox.com/s/ev2fuxc43m9v97o/AdminsBD.lua?dl=1")
---end
+if not (fs.exists(shell.getWorkingDirectory() .. "/lib/sky.lua")) then
+	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/programms/sky.lua /lib/sky.lua -f")
+end
 
 local mid = WIDTH / 2
 local sel = nil
