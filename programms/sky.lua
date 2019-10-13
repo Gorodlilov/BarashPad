@@ -102,10 +102,10 @@ function sky.logo(name,col1,col2,w,h,offset) --Рамка P.S. Луфф питу
 		offset = 0
 	end
 	sky.text(w/2 + offset - unicode.len("[ " .. name .. " ]")/2, 1, "[ " .. name .. " ]")
-	g.set(w-42, h, "[ Автор: SkyDrive_ - Проект: McSkill ]")
+	g.set(w-42, h, "[ Автор: Ovechka - Проект: MCSpace ]")
 	g.setForeground(col1)
 	g.set(w/2+1 + offset - unicode.len(name)/2, 1, name)
-	g.set(w-40, h, "Автор: SkyDrive_ - Проект: McSkill")
+	g.set(w-40, h, "Автор: Ovechka - Проект: MCSpace")
 end
 
 function sky.setColor(index) --Список цветов
@@ -257,7 +257,7 @@ end
 
 function sky.playtime(nick) --Плейтайм
 	local c = sky.com("playtime " .. nick)
-	local _, b = string.find(c, "has been online ")
+	local _, b = string.find(c, "has played ")
 	local text = ""
 	if b == nil then 
 		text = "error"
