@@ -51,7 +51,7 @@ end
 
 function sky.com(command) --Выполнить команду
 	if (component.isAvailable("opencb")) then
-		local _,c = component.opencb.executeCommand(command)
+		local _,c = component.opencb.execute(command)
 		return c
 	end
 end
