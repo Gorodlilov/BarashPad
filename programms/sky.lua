@@ -256,8 +256,8 @@ function sky.checkOP(nick) --Чек на опку
 end
 
 function sky.playtime(nick) --Плейтайм
-	local c = sky.com("onlinetime " .. nick)
-	local _, b = string.find(c, "has been online ")
+	local c = sky.com("playtime " .. nick)
+	local _, b = string.find(c, "has played ")
 	local text = ""
 	if b == nil then 
 		text = "error"
