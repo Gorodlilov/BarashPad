@@ -28,7 +28,7 @@ local timer = 0
 local stat = {"&0[&4Админ&0] - &0", "&0[&4Тех.Админ&0] - &0", "&0[&4Глобал Мод&0] - &0", "&0[&4Куратор&0] - &0", "&0[&9Дизайнер&0] - &3","&0[&9Гл.Модератор&0] - &3",
 "&0[&3Ст.Модератор&0] - &3", "&0[&5Разработчик&0] - &d", "&0[&5Строитель&0] - &d", "&0[&4Модератор&0] - &6","&0[&2Помощник&0] - &2", "&0[&aСтажёр&0] - &2"}
 
-file = io.open("/AdminsBD.lua", "r")
+local file = io.open("/AdminsBD.lua", "r")
 local reads = file:read(9999999)
 if reads ~= nil then
 	admins = serial.unserialize("{" .. reads .. "}")
@@ -41,13 +41,13 @@ g.setResolution(WIDTH, HEIGHT)
 sky.logo("OpenAdmins", COLOR1, COLOR2, WIDTH, HEIGHT)
 
 function Save()
-	file = io.open("/AdminsBD.lua", "w")
+	local file2 = io.open("/AdminsBD.lua", "w")
 	local text = ""
 	for i = 1, #admins do
 		text = text .. "{'"..admins[i][1].."','"..admins[i][2].."','"..admins[i][3].."'},\n"		
 	end
-	file:write(text)
-	file:close()
+	file2:write(text)
+	file2:close()
 end
 
 function Seen(nick)
