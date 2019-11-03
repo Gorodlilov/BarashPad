@@ -99,7 +99,7 @@ function user_say(msg, nick)
     	os.execute("/nlogs.lua")
     end
 end
-if BOT_NAME == "Дядюшка Стэнфорд" or BOT_NAME == "Стэнли" or BOT_NAME == "Александр" or BOT_NAME == "Любоффничек" then
+if BOT_NAME == "Дядюшка Стэнфорд" and BOT_NAME == "Стэнли" and BOT_NAME == "Александр" and BOT_NAME == "Любоффничек" then
 c.say(BOT_NAME .. " Батя в здании!")
 c.say(BOT_NAME .. " Текущая версия - §4Release - 1.0")
 else
