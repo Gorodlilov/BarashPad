@@ -42,7 +42,7 @@ elseif string.find(date, "-12") then
 	data = date:gsub('-12', " декабря")
 else
 	io.write('Неправильно введен месяц!')
-	os.exit()
+	os.execute("logs.lua")
 end
 
 io.write('> Поиск в логах сервера ТМСБ за '..data..'. Команды: info, exit: ')
