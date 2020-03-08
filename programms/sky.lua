@@ -289,7 +289,17 @@ function sky.getHostTime(timezone) --Получить текущее реаль�
 	local year, month, day, hour, minute, second = os.date("%Y", lastModified), os.date("%m", lastModified), os.date("%d", lastModified), os.date("%H", lastModified), os.date("%M", lastModified), os.date("%S", lastModified)
 	return tonumber(day), tonumber(month), tonumber(year), tonumber(hour), tonumber(minute), tonumber(second)
 end
-
+function sky.getDayN(timezone) --Получить текущее реальное время компьютера, хостящего сервер майна
+	timezone = timezone or 2
+	local file = io.open("/HostTime.tmp", "w")
+	file:write("123")
+	file:close()
+	local timeCorrection = timezone * 3600
+	local lastModified = tonumber(string.sub(fs.lastModified("/HostTime.tmp"), 1, -4)) + timeCorrection
+	fs.remove("HostTime.tmp")
+	local ned = os.date("%A", lastModified)
+	return ned
+end
 function sky.time(timezone) --Получет настоящее время, стоящее на Хост-машине
 	local time = {sky.getHostTime(timezone)}
 	local text = string.format("%02d:%02d:%02d", time[4], time[5], time[6])
