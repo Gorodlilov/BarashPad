@@ -1,6 +1,8 @@
 --|=========================|
 --| BarLibrary | Библиотека |
 --|  Проект MCSkill.ru TMSB |
+--| Rebuild for             |
+--|   MCspace.me - Project  |
 --|   Developer: Barawik_   |
 --|  Author: SkyDrive_ love |
 --|=========================|
