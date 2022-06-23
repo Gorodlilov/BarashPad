@@ -17,40 +17,35 @@ items = {
     { "minecraft:quartz",      0, 16384, 0 },
     { "minecraft:diamond",      0, 16384, 0 },
     { "minecraft:emerald",      0, 16384, 0 },
-    { "thermalfoundation:material",       128, 1024, 256 }, -- Copper Ingot
-    { "thermalfoundation:material",       129, 1024, 256 }, -- Tin Ingot
-    { "thermalfoundation:material",       130, 1024, 256 }, -- Silver Ingot
-    { "thermalfoundation:material",       131, 1024, 256 }, -- Lead Ingot
-    { "thermalfoundation:material",       161, 1024, 256 }, -- Electrum Ingot
-    { "thermalfoundation:material",       162, 1024, 256 }, -- Invar Ingot
-    { "thermalfoundation:material",       163, 1024, 256 }, -- Bronze Ingot
-    { "thermalfoundation:material",       164, 1024, 256 }, -- Constantan Ingot
-    { "thermalfoundation:material",       165, 1024, 256 }, -- Signalum Ingot
-    { "thermalfoundation:material",       166, 1024, 256 }, -- Lumium Ingot
-    { "thermalfoundation:material",       167, 1024, 256 }, -- Enderium Ingot
+    { "IC2:itemIngot",       0, 16384, 0 }, -- Copper Ingot
+    { "IC2:itemIngot",       1, 16384, 0 }, -- Tin Ingot
+    { "thermalfoundation:material",       66, 16384, 0 }, -- Серебро Ingot
+    { "thermalfoundation:material",       67, 16384, 0 }, -- Свинец Ingot
+    { "thermalfoundation:material",       71, 4096, 256 }, -- Электрум Ingot
+    { "thermalfoundation:material",       72, 4096, 256 }, -- Инвар Ingot
+    { "thermalfoundation:material",       74, 4096, 256 }, -- Синал Ingot
+    { "thermalfoundation:material",       75, 4096, 256 }, -- Люминовый Ingot
+    { "thermalfoundation:material",       76, 4096, 256 }, -- Эндериум Ingot
     { "appliedenergistics2:material",       24, 4096, 256 }, -- Engineering Processor
     { "appliedenergistics2:material",       23, 4096, 256 }, -- Calculation Processor
     { "appliedenergistics2:material",       22, 4096, 256 }, -- Logic Processor
-    { "appliedenergistics2:material",       11, 4096, 256 }, -- Pure Nether Quartz Crystal
-    { "appliedenergistics2:material",       10, 4096, 256 }, -- Pure Certus Quartz Crystal
+    { "appliedenergistics2:material",       11, 1024, 256 }, -- Pure Nether Quartz Crystal
+    { "appliedenergistics2:material",       10, 1024, 256 }, -- Pure Certus Quartz Crystal
     { "appliedenergistics2:material",       7, 4096, 256 }, -- Fluix Crystal
-    { "appliedenergistics2:material",       12, 4096, 256 }, -- Pure Fluix Crystal
+    { "appliedenergistics2:material",       12, 1024, 256 }, -- Pure Fluix Crystal
     { "appliedenergistics2:material",       0, 4096, 256 }, -- Certus Quartz Crystal
     { "appliedenergistics2:material",       1, 4096, 256 }, -- Charged Certus Quartz Crystal
     { "appliedenergistics2:material",       8, 4096, 256 }, -- Fluix Dust
-    { "appliedenergistics2:material",       2, 4096, 256 }, -- Certus Quartz Dust
-    { "actuallyadditions:item_dust",       5, 4096, 256 }, -- Crushed Quartz
-    { "enderio:item_material",       5, 4096, 256 }, -- Silicon
     { "enderio:item_alloy_ingot",       1, 1024, 256 }, -- Energetic Alloy Ingot
     { "enderio:item_alloy_ingot",       2, 1024, 256 }, -- Vibrant Alloy Ingot
     { "enderio:item_alloy_ingot",       5, 1024, 256 }, -- Pulsating Iron Ingot
     { "enderio:item_alloy_ingot",       6, 1024, 256 }, -- Dark Steel Ingot
     { "enderio:item_alloy_ingot",       7, 1024, 256 }, -- Soularium Ingot
     { "enderio:item_alloy_ingot",       8, 1024, 256 }, -- End Steel Ingot
-    { "enderio:item_alloy_ingot",       0, 1024, 256 } -- Electrical Steel Ingot
+    { "enderio:item_alloy_ingot",       0, 4096, 512 } -- Electrical Steel Ingot
 }
 
-loopDelay = 60 -- Seconds between runs
+loopDelay = 15 -- Seconds between runs
 
 -- Init list with crafting status
 for curIdx = 1, #items do
