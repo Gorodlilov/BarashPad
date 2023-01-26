@@ -199,6 +199,13 @@ function getPlayersNearME()
   end
 end
 
+local function tps()
+    local f = io.open("/tmp/TF", "w")
+    f:write("test")
+    f:close()
+    return(fs.lastModified("/tmp/TF"))
+end
+
 check()
 bridge.clear()
 addBox(25, 0, 100, 100, 0xFFFFFF, 0)
@@ -227,6 +234,23 @@ while true do
   if r then
     getPlayersNearME()
   end
+    RO = tps()
+    os.sleep(TC) 
+    RN = time()
+    RD = RN - RO
+    TPS = 20000 * TC / RD
+    TPS = string.sub(TPS, 1, 5)
+    nTPS = tonumber(TPS)
+    gpu.set(13, 2, "     ")
+    if nTPS <= 10 then
+        colors.eu = gpu.setForeground(0xcc4c4c)
+    elseif nTPS <= 15 then
+         colors.eu = gpu.setForeground(0xf2b233)
+    elseif nTPS > 15 then 
+         colors.eu = gpu.setForeground(0x7fcc19)
+    end
+     addText(25, 27, TPS, colors.eu)
+    gpu.set(13, 2, TPS)
   os.sleep(0.001)
   bridge.sync()
 end
