@@ -22,6 +22,7 @@ local players = {
 }
 local chat_box, me, radar, counter
 local average, me_a, cb, r = false, false, false, false
+local TC, RO, RN, RD, TPS = 2, 0, 0, 0
 -------------{TIME OPTIONS}------------------
 local TIME_ZONE = 3 --Ваш часовой пояс
 ---------------------------------------------
