@@ -236,7 +236,7 @@ while true do
   end
     RO = tps()
     os.sleep(TC) 
-    RN = time()
+    RN = tps()
     RD = RN - RO
     TPS = 20000 * TC / RD
     TPS = string.sub(TPS, 1, 5)
