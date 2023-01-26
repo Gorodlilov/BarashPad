@@ -199,7 +199,7 @@ function getPlayersNearME()
   end
 end
 
-local function tps()
+local function tps_m()
     local f = io.open("/tmp/TF", "w")
     f:write("test")
     f:close()
@@ -234,9 +234,9 @@ while true do
   if r then
     getPlayersNearME()
   end
-    RO = tps()
+    RO = tps_m()
     os.sleep(TC) 
-    RN = tps()
+    RN = tps_m()
     RD = RN - RO
     TPS = 20000 * TC / RD
     TPS = string.sub(TPS, 1, 5)
