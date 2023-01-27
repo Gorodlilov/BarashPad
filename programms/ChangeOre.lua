@@ -1,7 +1,7 @@
 --===========================
 -- Powered by serfaim7
 -- Redisigned by Gorodlilov
-=============================
+--===========================
 
 local items = { -- множитель, название руды, забираем руду, dmg, отдаём слиток, dmg, название слитка, ore_dictionary
   {"3","Дракониевая руда","DraconicEvolution:draconiumOre","0","DraconicEvolution:draconiumDust","0","Дракониевая пыль","dustDraconium"},
@@ -26,6 +26,12 @@ local items = { -- множитель, название руды, забирае
  
 local unicode = require("unicode")
 local com = require("component")
+local shell = require("shell")
+local fs = require("filesystem")
+if not fs.exists("/lib/Bar.lua") then
+	shell.execute("wget https://raw.githubusercontent.com/BarawikS/BarashPad/master/Barlib.lua /lib/Bar.lua")
+end
+local Bar = require("Bar")
 local interface = com.isAvailable("me_interface") and com.me_interface or error("нет ме интерфейса")
 local db = com.isAvailable("database") and com.database or error("нет базы данных")
 local chest = com.isAvailable("chest") and com.chest or error("нет сундука")
